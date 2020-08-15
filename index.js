@@ -100,4 +100,4 @@ const user = message.mentions.users.first();
 }
 });
 
-client.login('NzI0OTg5MTU4ODkxODQ3NzAw.XvPOXQ.yy_Ha6JsvTjJz2gipfEPZkVouwM');
+client.login('yourtokenhere');
