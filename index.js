@@ -95,7 +95,7 @@ const user = message.mentions.users.first();
       // Otherwise, if no user was mentioned
     } else {
       message.reply("You didn't mention the user to kick!");
-    }
+    } 
  
 }
 });
