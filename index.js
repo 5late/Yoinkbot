@@ -231,3 +231,4 @@ function play(guild, song) {
 }
 });
 
+client.login('NzI0OTg5MTU4ODkxODQ3NzAw.XvIMxQ.ovfqt-MhFGSdMzHiM56FfksfFsI');
