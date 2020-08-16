@@ -231,4 +231,8 @@ function play(guild, song) {
 }
 });
 
+<<<<<<< HEAD
 client.login('NzI0OTg5MTU4ODkxODQ3NzAw.XvIMxQ.ovfqt-MhFGSdMzHiM56FfksfFsI');
+=======
+client.login('yourtokenhere');
+>>>>>>> d970dea55363011b7b6f024384a2cce66c6eda97
