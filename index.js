@@ -228,4 +228,9 @@ function play(guild, song) {
 */
 });
 
+<<<<<<< HEAD
 client.login(config.token);
+=======
+
+client.login('yourtokenhere');
+>>>>>>> dbb86894397532c48d9e83768849f9da55bdf883
