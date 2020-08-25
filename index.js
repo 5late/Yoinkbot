@@ -22,18 +22,26 @@ client.once('ready', () => {
  console.log(client);
  });
 
- client.on('guildCreate', (guild) => {
+ client.on('guildCreate', guild => 'message', message => {
 
 	console.log('yeet')
 	//let SendChannel = guild.channels.cache.get("725391775157714955") || guild.channels.cache.get("chat");
-	let SendChannel = guild.channels.cache.first();
+	let SendChannel = guild.channels.cache.first(message.channel.send('Hello'));
 	console.log(SendChannel);
-	if(SendChannel) SendChannel.send('Hello');
+	//if(SendChannel) SendChannel.send('Hello');
 	
 });
 
  client.on('message', message => {
 
+	client.user.setPresence({
+		status: 'online',
+		activity: {
+			name: 'your mom',
+			type: 'LISTENING',
+			//url: 'https://www.twitch.tv/xurxxist'
+		}
+	})
  if (message.content === 'yeetus') {
  	message.channel.send('deletus').then(message.react('725380774265749637'));
  
@@ -228,9 +236,4 @@ function play(guild, song) {
 */
 });
 
-<<<<<<< HEAD
 client.login(config.token);
-=======
-
-client.login('yourtokenhere');
->>>>>>> dbb86894397532c48d9e83768849f9da55bdf883
