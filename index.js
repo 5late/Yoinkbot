@@ -1,5 +1,6 @@
 const commando = require('discord.js-commando');
 const path = require('path');
+const { startsWith } = require('ffmpeg-static');
 const config = require(path.join(__dirname, 'config', 'config.json'))
 const client = new commando.CommandoClient({
 	owner: config.ownerId,
@@ -34,7 +35,7 @@ client.once('ready', () => {
 
  client.on('message', message => {
 
-	client.user.setPresence({
+client.user.setPresence({
 		status: 'online',
 		activity: {
 			name: 'your mom',
@@ -42,6 +43,12 @@ client.once('ready', () => {
 			//url: 'https://www.twitch.tv/xurxxist'
 		}
 	})
+
+ if (message.content === 'updates') {
+
+	message.reply('https://github.com/Yoinkbot').then(message.react('🏘️'))
+ }
+
  if (message.content === 'yeetus') {
  	message.channel.send('deletus').then(message.react('725380774265749637'));
  
