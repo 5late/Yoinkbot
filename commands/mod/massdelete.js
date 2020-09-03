@@ -12,7 +12,7 @@ module.exports = class Massdelete extends commando.Command {
             name: 'delete',
             group: 'mod',
             memberName: 'delete',
-            description: 'Deletes the last 100 messages'
+            description: 'Deletes up to the last 100 messages'
         })
     }
     async run(msg) {
