@@ -46,7 +46,7 @@ client.user.setPresence({
 
  if (message.content === 'updates') {
 
-	message.reply('https://github.com/Yoinkbot').then(message.react('🏘️'))
+	message.reply('https://github.com/5late/Yoinkbot').then(message.react('🏘️'))
  }
 
  if (message.content === 'yeetus') {
