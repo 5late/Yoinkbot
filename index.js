@@ -62,6 +62,10 @@ client.user.setPresence({
   message.reply('Alive');
   }
 
+if (message.content === 'test'){
+	message.channel.send('Hello, <:cri:754491950396342354>');
+}
+
  if (message.content === 'Thanks Yoinkbot') {
  message.reply('No problem! My creator is Xurxx#7879, you can visit his website at https://5late.github.io')
  }
