@@ -27,6 +27,92 @@ module.exports = class UnboxFractureCase extends commando.Command {
         'https://www.ginx.tv/uploads/Andr%C3%A9s/Tec-9_Brother.jpg',
         'https://www.ginx.tv/uploads/Andr%C3%A9s/MP5-SD_Kitbash.jpg',
         'https://www.ginx.tv/uploads/Andr%C3%A9s/MAG-7_Monster_Call.jpg',
+        //coverts
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/AK-47_Legion_of_Anubis_by_Apel.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Desert_Eagle_Printstream.jpg',
+        //pinks
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/m4a4_tooth_fairy_2_minds.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Glock-18_Vogue.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/XM1014_Entombed.jpg',
+        //purples
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/MAC-10_Allure.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Galil_AR_Connexion.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Tec-9_Brother.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/MP5-SD_Kitbash.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/MAG-7_Monster_Call.jpg',
+        //coverts
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/AK-47_Legion_of_Anubis_by_Apel.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Desert_Eagle_Printstream.jpg',
+        //pinks
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/m4a4_tooth_fairy_2_minds.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Glock-18_Vogue.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/XM1014_Entombed.jpg',
+        //purples
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/MAC-10_Allure.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Galil_AR_Connexion.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Tec-9_Brother.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/MP5-SD_Kitbash.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/MAG-7_Monster_Call.jpg',
+        //blues
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/SG533_Ol_Rusty.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/SSG_08_Mainframe_001.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/PP-Bizon_Runic.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p90_Freight.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p250_Cassette.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Negev_Ultralight.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p2000_Gnarled.jpg',
+        //pinks
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/m4a4_tooth_fairy_2_minds.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Glock-18_Vogue.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/XM1014_Entombed.jpg',
+        //purples
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/MAC-10_Allure.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Galil_AR_Connexion.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Tec-9_Brother.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/MP5-SD_Kitbash.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/MAG-7_Monster_Call.jpg',
+        //blues
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/SG533_Ol_Rusty.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/SSG_08_Mainframe_001.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/PP-Bizon_Runic.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p90_Freight.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p250_Cassette.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Negev_Ultralight.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p2000_Gnarled.jpg',
+        //pinks
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/m4a4_tooth_fairy_2_minds.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Glock-18_Vogue.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/XM1014_Entombed.jpg',
+        //purples
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/MAC-10_Allure.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Galil_AR_Connexion.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Tec-9_Brother.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/MP5-SD_Kitbash.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/MAG-7_Monster_Call.jpg',
+        //blues
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/SG533_Ol_Rusty.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/SSG_08_Mainframe_001.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/PP-Bizon_Runic.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p90_Freight.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p250_Cassette.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Negev_Ultralight.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p2000_Gnarled.jpg',
+        //blues
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/SG533_Ol_Rusty.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/SSG_08_Mainframe_001.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/PP-Bizon_Runic.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p90_Freight.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p250_Cassette.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Negev_Ultralight.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p2000_Gnarled.jpg',
+        //blues
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/SG533_Ol_Rusty.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/SSG_08_Mainframe_001.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/PP-Bizon_Runic.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p90_Freight.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p250_Cassette.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Negev_Ultralight.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p2000_Gnarled.jpg',
         //blues
         'https://www.ginx.tv/uploads/Andr%C3%A9s/SG533_Ol_Rusty.jpg',
         'https://www.ginx.tv/uploads/Andr%C3%A9s/SSG_08_Mainframe_001.jpg',
@@ -79,21 +165,125 @@ module.exports = class UnboxFractureCase extends commando.Command {
         'https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_outdoor_aa_fade_light_large.f24efcbcc28c8f3ddf18e1d777cde462b5c0c739.png',
         ]
     const image = images[Math.floor(Math.random() * images.length)];
-    const blues = ['https://www.ginx.tv/uploads/Andr%C3%A9s/SSG_08_Mainframe_001.jpg',
-    'https://www.ginx.tv/uploads/Andr%C3%A9s/PP-Bizon_Runic.jpg',
-    'https://www.ginx.tv/uploads/Andr%C3%A9s/p90_Freight.jpg',
-    'https://www.ginx.tv/uploads/Andr%C3%A9s/p250_Cassette.jpg',
-    'https://www.ginx.tv/uploads/Andr%C3%A9s/Negev_Ultralight.jpg',
-    'https://www.ginx.tv/uploads/Andr%C3%A9s/p2000_Gnarled.jpg',]
-    {
-      
+    console.log(images.length)
+    const randomWear = ['Factory New', 'Min. Wear', 'Field Tested', 'Well Worn', 'Battle Scarred']
+    const wear = randomWear[Math.floor(Math.random() * randomWear.length)];             
+{
             const random = new Discord.MessageEmbed()
-              .setTitle('Here are your winnings')
-              .setAuthor('Xurxx#7879')
-              .setImage(image)
+              .setTitle('Spinning...')
+              .setAuthor('Xurxx')
+              .setImage('https://cdn.discordapp.com/attachments/726419340391350306/733722667731124264/ezgif-4-6457d879f742.gif')
+              .setFooter('Yoinkbot was created by Xurxx#7879.');
         
-            msg.channel.send(random);
+            
+           
 
+            const spin = new Discord.MessageEmbed()
+              .setTitle('You opened a case and got...')
+              .setAuthor('Xurxx')
+              .addFields(
+                  {name: 'Wear: ', value: wear},
+                  //{name: 'Float: ', value: floatValue, inline: true}
+              )
+              .setImage(image)
+              .setFooter('Yoinkbot was created by Xurxx#7879.');
+            
+            if (wear === 'Factory New') {
+                var floatValue = [(Math.random() * (0.000 - 0.0700) + 0.0700).toFixed(4)]
+                console.log(floatValue)
+            
+            const spin2 = new Discord.MessageEmbed()
+            .setTitle('You opened a case and got...')
+            .setAuthor('Xurxx')
+            .addFields(
+                {name: 'Wear: ', value: wear},
+                {name: 'Float:', value: floatValue, inline: true}
+            )
+            .setImage(image)
+            .setFooter('Yoinkbot was made by Xurxx#7879.');
+
+            var Embedmsg = await msg.channel.send(random)
+            await new Promise(r => setTimeout(r, 1200));
+            
+            //msg.delete()
+            Embedmsg.edit(spin2);
+              } 
+            if (wear === 'Min. Wear') {
+                var floatValue = [(Math.random() * (0.0700 - 0.1500) + 0.1500).toFixed(4)]
+                console.log(floatValue)
+
+              const spin3 = new Discord.MessageEmbed()
+              .setTitle('You opened a case and got...')
+              .setAuthor('Xurxx')
+              .addFields(
+                  {name: 'Wear: ', value: wear},
+                  {name: 'Float:', value: floatValue, inline: true}
+              )
+              .setImage(image)
+              .setFooter('Yoinkbot was made by Xurxx#7879.');
+            
+            var Embedmsg = await msg.channel.send(random)
+            await new Promise(r => setTimeout(r, 1200));
+            
+            Embedmsg.edit(spin3);
+              }
+            if (wear === 'Field Tested') {
+                var floatValue = [(Math.random() * (0.1500 - 0.3800) + 0.3800).toFixed(4)]
+                console.log(floatValue)
+
+              const spin4 = new Discord.MessageEmbed()
+              .setTitle('You opened a case and got...')
+              .setAuthor('Xurxx')
+              .addFields(
+                  {name: 'Wear: ', value: wear},
+                  {name: 'Float:', value: floatValue, inline: true}
+              )
+              .setImage(image)
+              .setFooter('Yoinkbot was made by Xurxx#7879.');
+            
+            var Embedmsg = await msg.channel.send(random)
+            await new Promise(r => setTimeout(r, 1200));
+            
+            Embedmsg.edit(spin4);
+              }
+              if (wear === 'Well Worn') {
+                var floatValue = [(Math.random() * (0.3800 - 0.4500) + 0.1500).toFixed(4)]
+                console.log(floatValue)
+
+              const spin5 = new Discord.MessageEmbed()
+              .setTitle('You opened a case and got...')
+              .setAuthor('Xurxx')
+              .addFields(
+                  {name: 'Wear: ', value: wear},
+                  {name: 'Float:', value: floatValue, inline: true}
+              )
+              .setImage(image)
+              .setFooter('Yoinkbot was made by Xurxx#7879.');
+            
+            var Embedmsg = await msg.channel.send(random)
+            await new Promise(r => setTimeout(r, 1200));
+            
+            Embedmsg.edit(spin5);
+              }
+              if (wear === 'Battle Scarred') {
+                var floatValue = [(Math.random() * (0.4500 - 1.0000) + 1.0000).toFixed(4)]
+                console.log(floatValue)
+
+              const spin6 = new Discord.MessageEmbed()
+              .setTitle('You opened a case and got...')
+              .setAuthor('Xurxx')
+              .addFields(
+                  {name: 'Wear: ', value: wear},
+                  {name: 'Float:', value: floatValue, inline: true}
+              )
+              .setImage(image)
+              .setFooter('Yoinkbot was made by Xurxx#7879.');
+            
+            var Embedmsg = await msg.channel.send(random)
+            await new Promise(r => setTimeout(r, 1200));
+            
+            Embedmsg.edit(spin6);
+              }
             {
                 if (image === 'https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_outdoor_aa_fade_light_large.f24efcbcc28c8f3ddf18e1d777cde462b5c0c739.png'){
                 return msg.reply('Congrats! You got a knife!')
@@ -102,3 +292,4 @@ module.exports = class UnboxFractureCase extends commando.Command {
         }
     }
 }
+
