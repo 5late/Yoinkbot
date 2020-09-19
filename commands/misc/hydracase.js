@@ -1,4 +1,5 @@
 const commando = require('discord.js-commando');
+const fs = require('fs');
 
 const Discord = require('discord.js')
     
@@ -13,6 +14,12 @@ module.exports = class UnboxHydraCase extends commando.Command {
         })
     }
     async run(msg) {
+      if(msg.content === "?fracture"){
+        var caseopened = true
+
+      }
+
+
     const images = [
 //blues
 'https://steamcdn-a.akamaihd.net/apps/csgo/images/operationhydra/11.png',
@@ -147,10 +154,7 @@ module.exports = class UnboxHydraCase extends commando.Command {
               .setAuthor('Xurxx')
               .setImage('https://cdn.discordapp.com/attachments/726419340391350306/733722667731124264/ezgif-4-6457d879f742.gif')
               .setFooter('Yoinkbot was created by Xurxx#7879.');
-        
-            
-           
-
+      
             const spin = new Discord.MessageEmbed()
               .setTitle('You opened a case and got...')
               .setAuthor('Xurxx')
@@ -220,7 +224,7 @@ module.exports = class UnboxHydraCase extends commando.Command {
             Embedmsg.edit(spin4);
               }
               if (wear === 'Well Worn') {
-                var floatValue = [(Math.random() * (0.3800 - 0.4500) + 0.1500).toFixed(4)]
+                var floatValue = [(Math.random() * (0.3800 - 0.4500) + 0.4500).toFixed(4)]
                 console.log(floatValue)
 
               const spin5 = new Discord.MessageEmbed()
@@ -263,5 +267,16 @@ module.exports = class UnboxHydraCase extends commando.Command {
             }
             }
         }
+var countfile = fs.readFileSync("./counterhydra.txt", {"encoding": "utf-8"});
+    if(caseopened = true){
+    var counter = countfile;
+  
+  fs.writeFileSync("counterhydra.txt", countfile)
+  counter +=1;
+}   
+  var counting = counter
+  
+  fs.writeFileSync("counterhydra.txt", counting.toString());
+  console.log('The HYDRA case has been opened ' + countfile.length + ' times')
     }
-}
+    }

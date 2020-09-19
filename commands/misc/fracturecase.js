@@ -1,5 +1,8 @@
 const commando = require('discord.js-commando');
-
+const fs = require('fs');
+const util = require('util');
+writeFile = util.promisify(fs.writeFile);
+const client = new commando.CommandoClient
 const Discord = require('discord.js')
     
 
@@ -12,7 +15,13 @@ module.exports = class UnboxFractureCase extends commando.Command {
             description: 'Unbox the Fracture case.'
         })
     }
+    
     async run(msg) {
+           
+if(msg.content === "?fracture") {
+  var caseopened = true
+}
+
     const images = [
         //coverts
         'https://www.ginx.tv/uploads/Andr%C3%A9s/AK-47_Legion_of_Anubis_by_Apel.jpg',
@@ -43,10 +52,6 @@ module.exports = class UnboxFractureCase extends commando.Command {
         //coverts
         'https://www.ginx.tv/uploads/Andr%C3%A9s/AK-47_Legion_of_Anubis_by_Apel.jpg',
         'https://www.ginx.tv/uploads/Andr%C3%A9s/Desert_Eagle_Printstream.jpg',
-        //pinks
-        'https://www.ginx.tv/uploads/Andr%C3%A9s/m4a4_tooth_fairy_2_minds.jpg',
-        'https://www.ginx.tv/uploads/Andr%C3%A9s/Glock-18_Vogue.jpg',
-        'https://www.ginx.tv/uploads/Andr%C3%A9s/XM1014_Entombed.jpg',
         //purples
         'https://www.ginx.tv/uploads/Andr%C3%A9s/MAC-10_Allure.jpg',
         'https://www.ginx.tv/uploads/Andr%C3%A9s/Galil_AR_Connexion.jpg',
@@ -121,10 +126,30 @@ module.exports = class UnboxFractureCase extends commando.Command {
         'https://www.ginx.tv/uploads/Andr%C3%A9s/p250_Cassette.jpg',
         'https://www.ginx.tv/uploads/Andr%C3%A9s/Negev_Ultralight.jpg',
         'https://www.ginx.tv/uploads/Andr%C3%A9s/p2000_Gnarled.jpg',
-        //pinks
-        'https://www.ginx.tv/uploads/Andr%C3%A9s/m4a4_tooth_fairy_2_minds.jpg',
-        'https://www.ginx.tv/uploads/Andr%C3%A9s/Glock-18_Vogue.jpg',
-        'https://www.ginx.tv/uploads/Andr%C3%A9s/XM1014_Entombed.jpg',
+        //blues
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/SG533_Ol_Rusty.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/SSG_08_Mainframe_001.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/PP-Bizon_Runic.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p90_Freight.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p250_Cassette.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Negev_Ultralight.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p2000_Gnarled.jpg',
+        //blues
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/SG533_Ol_Rusty.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/SSG_08_Mainframe_001.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/PP-Bizon_Runic.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p90_Freight.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p250_Cassette.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Negev_Ultralight.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p2000_Gnarled.jpg',
+        //blues
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/SG533_Ol_Rusty.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/SSG_08_Mainframe_001.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/PP-Bizon_Runic.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p90_Freight.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p250_Cassette.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/Negev_Ultralight.jpg',
+        'https://www.ginx.tv/uploads/Andr%C3%A9s/p2000_Gnarled.jpg',
         //purples
         'https://www.ginx.tv/uploads/Andr%C3%A9s/MAC-10_Allure.jpg',
         'https://www.ginx.tv/uploads/Andr%C3%A9s/Galil_AR_Connexion.jpg',
@@ -165,19 +190,17 @@ module.exports = class UnboxFractureCase extends commando.Command {
         'https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_outdoor_aa_fade_light_large.f24efcbcc28c8f3ddf18e1d777cde462b5c0c739.png',
         ]
     const image = images[Math.floor(Math.random() * images.length)];
-    console.log(images.length)
+    console.log('The amount of images is ' + images.length)
     const randomWear = ['Factory New', 'Min. Wear', 'Field Tested', 'Well Worn', 'Battle Scarred']
     const wear = randomWear[Math.floor(Math.random() * randomWear.length)];             
 {
+            
             const random = new Discord.MessageEmbed()
               .setTitle('Spinning...')
               .setAuthor('Xurxx')
               .setImage('https://cdn.discordapp.com/attachments/726419340391350306/733722667731124264/ezgif-4-6457d879f742.gif')
               .setFooter('Yoinkbot was created by Xurxx#7879.');
         
-            
-           
-
             const spin = new Discord.MessageEmbed()
               .setTitle('You opened a case and got...')
               .setAuthor('Xurxx')
@@ -190,7 +213,7 @@ module.exports = class UnboxFractureCase extends commando.Command {
             
             if (wear === 'Factory New') {
                 var floatValue = [(Math.random() * (0.000 - 0.0700) + 0.0700).toFixed(4)]
-                console.log(floatValue)
+                console.log('The float was ' + floatValue)
             
             const spin2 = new Discord.MessageEmbed()
             .setTitle('You opened a case and got...')
@@ -247,7 +270,7 @@ module.exports = class UnboxFractureCase extends commando.Command {
             Embedmsg.edit(spin4);
               }
               if (wear === 'Well Worn') {
-                var floatValue = [(Math.random() * (0.3800 - 0.4500) + 0.1500).toFixed(4)]
+                var floatValue = [(Math.random() * (0.3800 - 0.4500) + 0.4500).toFixed(4)]
                 console.log(floatValue)
 
               const spin5 = new Discord.MessageEmbed()
@@ -290,6 +313,15 @@ module.exports = class UnboxFractureCase extends commando.Command {
             }
             }
         }
+var countfile = fs.readFileSync("./counterfracture.txt", {"encoding": "utf-8"});
+if(caseopened = true){
+  var counter = countfile;
+  fs.writeFileSync("counterfracture.txt", countfile)
+  counter +=1;
+}   
+  var counting = counter
+  
+  fs.writeFileSync("counterfracture.txt", counting.toString());
+  console.log('The FRACTURE case has been opened ' + countfile.length + ' times')
     }
 }
-

@@ -6,10 +6,12 @@
     "discord.js-commando": "discordjs/Commando",
     "ffmpeg": "0.0.4",
     "ffmpeg-static": "^4.2.6",
+    "fs": "0.0.1-security",
     "node-opus": "^0.3.3",
     "opusscript": "0.0.7",
     "request": "^2.88.2",
     "simple-youtube-api": "^5.2.1",
+    "util": "^0.12.3",
     "ytdl-core": "^3.2.1",
     "ytdl-core-discord": "^1.2.1"
   }

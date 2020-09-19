@@ -12,7 +12,8 @@ client.login(config.token);
 client.registry.registerGroups([
 	['mod', 'mod commands'],
 	['misc', 'misc commands'],
-	['music', 'music bot commands']
+	['music', 'music bot commands'],
+	['dev_tools', 'developer tools']
 ]).registerDefaults()
 .registerCommandsIn(path.join(__dirname, 'commands'));
 
@@ -57,6 +58,10 @@ client.user.setPresence({
  if (message.content === 'Yeetus') {
  message.reply('Deletus');
  }
+ 
+ if(message.content === 'activity'){
+	message.channel.send(`${client.guilds.cache.size} servers have ${client.users.cache.size} members`+` | !help `, { type: 'WATCHING' })
+   }
 
  if (message.content === 'Yoinkbot pls alive') {
   message.reply('Alive');
@@ -106,9 +111,6 @@ if (message.content === 'im out') {
 	message.channel.send({files: ["./Fuck This Shit I'm Out.mp4"] })
 	
 }
-
-
-
 
  if (message.content === 'rickroll') {
 	 setUsername(yeet);
