@@ -85,15 +85,14 @@ if (message.content === 'this is so sad') {
 	
 }
 
-  if (message.content === 'bruh') {
+  /*if (message.content === 'bruh') {
  
-	message.delete();
+	message.delete();*/
 
  if (message.content === 'Crab Rave') {
  
  	message.react(':crab:')
-	 }
-	}	 
+	 }	 
 
  if (message.content === 'dance') {
 	 message.channel.send({files: ["https://i.imgur.com/O0QUXuj.gif"]} )

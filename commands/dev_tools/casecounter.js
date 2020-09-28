@@ -1,5 +1,7 @@
 const commando = require('discord.js-commando');
-const fs = require('fs')
+const fs = require('fs');
+const { DiscordAPIError } = require('discord.js');
+const Discord = require('discord.js');
 module.exports = class KickCommand extends commando.Command {
     constructor(client) {
         super(client, {
@@ -12,9 +14,16 @@ module.exports = class KickCommand extends commando.Command {
     async run (msg) {
            
         var countfile = fs.readFileSync("./counterfracture.txt", {"encoding": "utf-8"});
-        msg.channel.send('Global Fracture cases unboxed: ' + countfile.length)
         var countfilehydra = fs.readFileSync("./counterhydra.txt", {"encoding": "utf-8"});
-        msg.channel.send('Global Hydra Cases unboxed: ' + countfilehydra.length)
 
+        const sendfinal = new Discord.MessageEmbed()
+        .setTitle('Fracture Case')
+        .setDescription('Global Fracture cases unboxed: ' + countfile.length)
+        msg.channel.send(sendfinal)
+
+        const sendfinalhydra = new Discord.MessageEmbed()
+        .setTitle('Hydra Case')
+        .setDescription('Global Hydra Cases unboxed: ' + countfilehydra.length)
+        msg.channel.send(sendfinalhydra)
     }
 }
