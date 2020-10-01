@@ -13,6 +13,7 @@
     "request": "^2.88.2",
     "simple-youtube-api": "^5.2.1",
     "util": "^0.12.3",
+    "youtube-search": "^1.1.4",
     "ytdl-core": "^3.2.1",
     "ytdl-core-discord": "^1.2.1"
   }

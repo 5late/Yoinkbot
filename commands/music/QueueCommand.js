@@ -1,10 +1,9 @@
 const commando = require('discord.js-commando');
-const discord = require('discord.js');
-const fs = require('fs');
-const ytdl = require('ytdl-core-discord');
+const Discord = require('discord.js');
+const ytdl = require('ytdl-core');
 const streamOptions = {
     seek: 0,
-    volume: 1
+    volume: 100
 }
 
 var musicQueue = [];
@@ -20,13 +19,13 @@ module.exports = class QueueCommand extends commando.Command {
         })
     }
     async run(msg, youtubeUrl) {
-        let embed = new discord.MessageEmbed();
+        let embed = new Discord.MessageEmbed();
         if(musicQueue.some(url => url === youtubeUrl)) {
             embed.setDescription("Url is already in queue.");
         }
         else if(ytdl.validateURL(youtubeUrl)) {
             musicQueue.push(youtubeUrl);
-            let vc = msg.guild.channels.cache.find(ch => ch.name.toLowerCase() === 'gei' && ch.type === 'voice');
+            let vc = msg.guild.channels.cache.find(ch => ch.name.toLowerCase() === 'yoinkbothome' && ch.type === 'voice');
             if(vc && vc.connection) {
                 if(!vc.connection.speaking) {
                     await this.playSong(vc.connection, msg);
@@ -41,9 +40,9 @@ module.exports = class QueueCommand extends commando.Command {
     }
 
     async playSong(connection, msg) {
-        //const stream = ytdl(musicQueue[0], { filter: 'audioonly'});
+        const stream = ytdl(musicQueue[0], { filter: 'audioonly'});
         console.log(musicQueue[0])
-        const dispatcher = connection.play(await ytdl(url), {type: 'opus'});
+        const dispatcher = connection.playStream(stream, streamOptions);
         dispatcher.on('start', () => {
             msg.channel.send("Playing song...");
         });

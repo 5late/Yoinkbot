@@ -10,7 +10,7 @@ module.exports = class JoinVoiceChannelCommand extends commando.Command {
         })
     }
     async run(msg) {
-        let vc = msg.guild.channels.cache.find(ch => ch.name.toLowerCase() === 'gei' && ch.type === 'voice');
+        let vc = msg.guild.channels.cache.find(ch => ch.name.toLowerCase() === 'yoinkbothome' && ch.type === 'voice');
         if(vc && !vc.connection) {
             await vc.join();
         }

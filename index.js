@@ -1,4 +1,5 @@
 const commando = require('discord.js-commando');
+const Discord = require('discord.js');
 const path = require('path');
 const { startsWith } = require('ffmpeg-static');
 const config = require(path.join(__dirname, 'config', 'config.json'))
@@ -6,6 +7,12 @@ const client = new commando.CommandoClient({
 	owner: config.ownerId,
 	commandPrefix: config.prefix
 });
+const search = require('youtube-search');
+const opts = {
+    maxResults: 25,
+    key: config.YOUTUBE_API,
+    type: 'video'
+};
 
 
 client.login(config.token);
@@ -17,38 +24,65 @@ client.registry.registerGroups([
 ]).registerDefaults()
 .registerCommandsIn(path.join(__dirname, 'commands'));
 
-
-	
 client.once('ready', () => {
- console.log(`Logged in as ${client.user.tag}!`);
- console.log(client);
- });
-
- client.on('guildCreate', guild => 'message', message => {
-
-	console.log('yeet')
-	//let SendChannel = guild.channels.cache.get("725391775157714955") || guild.channels.cache.get("chat");
-	let SendChannel = guild.channels.cache.first(message.channel.send('Hello'));
-	console.log(SendChannel);
-	//if(SendChannel) SendChannel.send('Hello');
-	
+ 	console.log(`Logged in as ${client.user.tag}!`);
+	console.log(client);
 });
 
- client.on('message', message => {
+client.on('message', async message => {
 
 client.user.setPresence({
-		status: 'online',
-		activity: {
-			name: 'your mom',
-			type: 'LISTENING',
-			//url: 'https://www.twitch.tv/xurxxist'
-		}
-	})
+	status: 'online',
+	activity: {
+		name: 'your mom',
+		type: 'LISTENING',
+		//url: 'https://www.twitch.tv/xurxxist'
+	}
+})
 
- if (message.content === 'updates') {
-
+if (message.content === 'updates') {
 	message.reply('https://github.com/5late/Yoinkbot').then(message.react('🏘️'))
- }
+}
+
+ if(message.author.bot) return;
+
+    if(message.content.toLowerCase() === '?search') {
+        let embed = new Discord.MessageEmbed()
+            .setColor("#73ffdc")
+            .setDescription("Please enter a search query. Remember to narrow down your search.")
+            .setTitle("YouTube Search API");
+        let embedMsg = await message.channel.send(embed);
+        let filter = m => m.author.id === message.author.id;
+        let query = await message.channel.awaitMessages(filter, { max: 1 });
+        let results = await search(query.first().content, opts).catch(err => console.log(err));
+        if(results) {
+            let youtubeResults = results.results;
+            let i  =0;
+            let titles = youtubeResults.map(result => {
+                i++;
+                return i + ") " + result.title;
+            });
+            console.log(titles);
+            message.channel.send({
+                embed: {
+                    title: 'Select which song you want by typing the number',
+                    description: titles.join("\n")
+                }
+            }).catch(err => console.log(err));
+            
+            filter = m => (m.author.id === message.author.id) && m.content >= 1 && m.content <= youtubeResults.length;
+            let collected = await message.channel.awaitMessages(filter, { maxMatches: 1 });
+            let selected = youtubeResults[collected.first().content - 1];
+
+            embed = new Discord.MessageEmbed()
+                .setTitle(`${selected.title}`)
+                .setURL(`${selected.link}`)
+                .setDescription(`${selected.description}`)
+                .setThumbnail(`${selected.thumbnails.default.url}`);
+				console.log(embed)
+            message.channel.send(embedMsg);
+        }
+    }
 
  if (message.content === 'yeetus') {
  	message.channel.send('deletus').then(message.react('725380774265749637'));
@@ -64,7 +98,7 @@ client.user.setPresence({
    }
 
  if (message.content === 'Yoinkbot pls alive') {
-  message.reply('Alive');
+  	message.reply('Alive');
   }
 
 if (message.content === 'test'){
@@ -115,6 +149,16 @@ if (message.content === 'im out') {
 	 setUsername(yeet);
  }
 
+if(message.content === 'biden') {
+	message.channel.send('https://media.tenor.com/images/98bdd808780ab874d270947e1e33e275/tenor.gif')
+	message.channel.send('https://media.tenor.com/images/046a1ac7298597402ebb5a80bceb5cb3/tenor.gif')
+	message.channel.send('https://media.tenor.com/images/f2fad2139de45a70cf92d8b644c48385/tenor.gif')
+}
+
+if(message.content === 'circus'){
+	message.channel.send('For your viewing pleasure, please enjoy this video: https://youtu.be/LX7DMncaa1M')
+}
+
   if (message.content === 'what is my avatar') {
     // Send the user's avatar URL
     message.reply(message.author.displayAvatarURL());
@@ -130,6 +174,25 @@ if (message.content === 'pro life tips')
 	tts: true
 	}
 )
+
+if (message.content === 'oscar') {
+	message.channel.send('https://cdn.discordapp.com/attachments/754084714545152106/760191372920750150/SmartSelect_20200928-132839_Instagram.gif')
+}
+
+if (message.content === 'liam'){
+	message.channel.send({files: ["./liam.mp4"]})
+}
+
+if(message.content === 'yawsha') {
+	message.channel.send('https://cdn.discordapp.com/attachments/754084714545152106/760546234838024282/SmartSelect_20200929-125857_Gallery.gif')
+}
+
+if(message.content === 'nick') {
+	message.channel.send({files: ["./nicksus.mp4"]})
+	message.channel.send({files: ["./nicksus2.mp4"]})
+	message.channel.send('https://cdn.discordapp.com/attachments/756605065393078422/760940998649577542/unknown.png')
+}
+
 
 
 /*if (!message.author.bot) {
