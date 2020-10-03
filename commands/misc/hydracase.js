@@ -153,7 +153,7 @@ module.exports = class UnboxHydraCase extends commando.Command {
               .setTitle('Spinning...')
               .setAuthor('Xurxx')
               .setImage('https://cdn.discordapp.com/attachments/726419340391350306/733722667731124264/ezgif-4-6457d879f742.gif')
-              .setFooter('Yoinkbot was created by Xurxx#7879.');
+              .setFooter("Yoinkbot collects your username and tag to improve our services. To find out whats being collected, contact the bot owner with the command '?owner'")
       
             const spin = new Discord.MessageEmbed()
               .setTitle('You opened a case and got...')
@@ -163,7 +163,7 @@ module.exports = class UnboxHydraCase extends commando.Command {
                   //{name: 'Float: ', value: floatValue, inline: true}
               )
               .setImage(image)
-              .setFooter('Yoinkbot was created by Xurxx#7879.');
+              .setFooter("Yoinkbot collects your username and tag to improve our services. To find out whats being collected, contact the bot owner with the command '?owner'")
             
             if (wear === 'Factory New') {
                 var floatValue = [(Math.random() * (0.000 - 0.0700) + 0.0700).toFixed(4)]
@@ -177,7 +177,7 @@ module.exports = class UnboxHydraCase extends commando.Command {
                 {name: 'Float:', value: floatValue, inline: true}
             )
             .setImage(image)
-            .setFooter('Yoinkbot was made by Xurxx#7879.');
+            .setFooter("Yoinkbot collects your username and tag to improve our services. To find out whats being collected, contact the bot owner with the command '?owner'")
 
             var Embedmsg = await msg.channel.send(random)
             await new Promise(r => setTimeout(r, 1200));
@@ -197,7 +197,7 @@ module.exports = class UnboxHydraCase extends commando.Command {
                   {name: 'Float:', value: floatValue, inline: true}
               )
               .setImage(image)
-              .setFooter('Yoinkbot was made by Xurxx#7879.');
+              .setFooter("Yoinkbot collects your username and tag to improve our services. To find out whats being collected, contact the bot owner with the command '?owner'")
             
             var Embedmsg = await msg.channel.send(random)
             await new Promise(r => setTimeout(r, 1200));
@@ -216,7 +216,7 @@ module.exports = class UnboxHydraCase extends commando.Command {
                   {name: 'Float:', value: floatValue, inline: true}
               )
               .setImage(image)
-              .setFooter('Yoinkbot was made by Xurxx#7879.');
+              .setFooter("Yoinkbot collects your username and tag to improve our services. To find out whats being collected, contact the bot owner with the command '?owner'")
             
             var Embedmsg = await msg.channel.send(random)
             await new Promise(r => setTimeout(r, 1200));
@@ -235,7 +235,7 @@ module.exports = class UnboxHydraCase extends commando.Command {
                   {name: 'Float:', value: floatValue, inline: true}
               )
               .setImage(image)
-              .setFooter('Yoinkbot was made by Xurxx#7879.');
+              .setFooter("Yoinkbot collects your username and tag to improve our services. To find out whats being collected, contact the bot owner with the command '?owner'")
             
             var Embedmsg = await msg.channel.send(random)
             await new Promise(r => setTimeout(r, 1200));
@@ -254,7 +254,7 @@ module.exports = class UnboxHydraCase extends commando.Command {
                   {name: 'Float:', value: floatValue, inline: true}
               )
               .setImage(image)
-              .setFooter('Yoinkbot was made by Xurxx#7879.');
+              .setFooter("Yoinkbot collects your username and tag to improve our services. To find out whats being collected, contact the bot owner with the command '?owner'")
             
             var Embedmsg = await msg.channel.send(random)
             await new Promise(r => setTimeout(r, 1200));
@@ -278,5 +278,32 @@ var countfile = fs.readFileSync("./counterhydra.txt", {"encoding": "utf-8"});
   
   fs.writeFileSync("counterhydra.txt", counting.toString());
   console.log('The HYDRA case has been opened ' + countfile.length + ' times')
+  fs.readFile("./information.txt", function (err, data) {
+    if (err) throw err;
+    var datata = data.toString('utf-8')
+    if(data.includes('Xurxx#7879')){
+     console.log((datata.length / 29) - .689655172413794)
+    }
+  });
+  const id = msg.author.id
+  console.log(id)
+  const name = msg.member.user.tag;
+  console.log(name)
+  var information = [];
+  information.push(name, id)
+  var savedinfo = fs.readFileSync("./information.txt", {"encoding": "utf-8"});
+        
+      var newinfo = savedinfo;
+    fs.writeFileSync("information.txt", newinfo.toString())
+    
+    fs.appendFileSync("information.txt", information.toString())
+
+    fs.readFile("./information.txt", function (err, data) {
+        if (err) throw err;
+        var datata = data.toString('utf-8')
+        if(data.includes('Xurxx#7879')){
+         console.log((datata.length / 29) - .689655172413794)
+        }
+      });
     }
     }
