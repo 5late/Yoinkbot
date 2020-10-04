@@ -183,6 +183,10 @@ if (message.content === 'liam'){
 	message.channel.send({files: ["./liam.mp4"]})
 }
 
+if (message.content === 'emsus') {
+	message.channel.send({files: ["./emsus.mp4"]})
+}
+
 if(message.content === 'yawsha') {
 	message.channel.send('https://cdn.discordapp.com/attachments/754084714545152106/760546234838024282/SmartSelect_20200929-125857_Gallery.gif')
 }
