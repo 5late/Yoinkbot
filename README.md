@@ -33,4 +33,4 @@
         * Example: `?fracture`
 
 * Hydra Case
-    * The `?hydra` command allows you to open a hydra case and shows you the item you received.
+    * The `?hydra` command allows you to open a hydra case and shows you the item you received. 
