@@ -15,7 +15,7 @@
     * The `?d-redditinfo` command gives information about Yoinkbots Reddit Integration. 
         * Example: `?d-redditinfo`
 
-##Misc
+## Misc
 * Attack Game
     * The `?attack ` command allows you to attack the bot.
         * Example: `?attack`
