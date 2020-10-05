@@ -32,7 +32,7 @@ module.exports = class SimprateCommand extends commando.Command {
         const newembed = new Discord.MessageEmbed()
             .setColor('#00FFCC')
             .setTitle('Simprating machine')
-            .addField(".", `${rMember}` + ' you are ' + simprate + '% simp')
+            .addField("Result:", `${rMember}` + ' you are ' + simprate + '% simp')
             .setFooter("Yoinkbot collects your username and tag to improve our services. To find out whats being collected, contact the bot owner with the command '?owner'")
         //msg.channel.send(newembed)
         if(rMember.id === '342874810868826112') {

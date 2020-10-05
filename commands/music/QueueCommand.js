@@ -1,6 +1,7 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js');
 const ytdl = require('ytdl-core');
+const client = commando.CommandoClient
 const streamOptions = {
     seek: 0,
     volume: 100
@@ -11,9 +12,9 @@ var musicQueue = [];
 module.exports = class QueueCommand extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'queue',
+            name: 'q',
             group: 'music',
-            memberName: 'queue',
+            memberName: 'q',
             description: 'Queue a song for the bot to play.',
             argsType: 'single'
         })
@@ -25,21 +26,27 @@ module.exports = class QueueCommand extends commando.Command {
         }
         else if(ytdl.validateURL(youtubeUrl)) {
             musicQueue.push(youtubeUrl);
-            let vc = msg.guild.channels.cache.find(ch => ch.name.toLowerCase() === 'yoinkbothome' && ch.type === 'voice');
-            if(vc && vc.connection) {
-                if(!vc.connection.speaking) {
-                    await this.playSong(vc.connection, msg);
-                }
-                else {
-                    console.log(musicQueue);
-                }
+            console.log(musicQueue);
+            if (msg.channel.type === 'dm') return;
+    
+            const voiceChannel = msg.member.voice.channel;
+    
+            if (!voiceChannel) {
+                return msg.reply('please join a voice channel first!');
             }
+    
+            voiceChannel.join().then(connection => {
+                //const stream = ytdl('https://www.youtube.com/watch?v=83xBPCw5hh4&ab_channel=DaBaby',);
+                const dispatcher = connection.play(ytdl(musicQueue.toString(),{ filter: 'audioonly' }));
+                dispatcher.on('finish', () => voiceChannel.leave());
+            });
+            //let vc = msg.guild.channels.cache.find(ch => ch.name.toLowerCase() === 'yoinkbothome' && ch.type === 'voice');
         } else {
             embed.setDescription("Invalid YouTube URL!");
         }
     }
 
-    async playSong(connection, msg) {
+    /*async playSong(connection, msg) {
         const stream = ytdl(musicQueue[0], { filter: 'audioonly'});
         console.log(musicQueue[0])
         const dispatcher = connection.playStream(stream, streamOptions);
@@ -58,6 +65,5 @@ module.exports = class QueueCommand extends commando.Command {
                     this.playSong(connection, msg);
                 }, 500)
             }
-        })
+        })*/
     }
-}
