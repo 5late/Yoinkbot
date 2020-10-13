@@ -7,8 +7,9 @@ module.exports = class OneThousandCommand extends commando.Command {
             group: 'misc',
             memberName: 'onek',
             description: 'Adds one to a number then sends, until 1000',
+            
         })
-    }
+      }
     async run (msg) {
            
         var i;

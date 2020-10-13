@@ -1,60 +1,124 @@
 const commando = require('discord.js-commando');
+const Discord = require('discord.js');
+const ytdl = require('ytdl-core');
+const search = require('youtube-search')
 const client = commando.CommandoClient
-const fs = require('fs')
-const Discord = require('discord.js')
-const ytdl = require('ytdl-core')
+const Youtube = require('simple-youtube-api');
+const youtube = new Youtube("AIzaSyCfJycSirtEslaXzLCSrc_osNR65VwlMzw");
 
-module.exports = class ProgrammerHumourMeme extends commando.Command {
+const yts = require('yt-search');
+const YouTube = require('youtube-node');
+const youTube = new YouTube();
+youTube.setKey()
+const streamOptions = {
+    seek: 0,
+    volume: 100
+}
+const prefix = '?'
+
+var musicQueue = [];
+
+
+module.exports = class QueueCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'play',
             group: 'music',
             memberName: 'play',
-            description: 'Plays a song.',
+            description: 'Queue a song for the bot to play.',
+            argsType: 'single'
         })
     }
-    async run (msg) {
-           
-            if (msg.channel.type === 'dm') return;
+    async run(msg, youtubeUrl) {
+    const args = msg.content.slice(prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
+    const query = args.join(' ');
     
-            const voiceChannel = msg.member.voice.channel;
-    
-            if (!voiceChannel) {
-                return msg.reply('please join a voice channel first!');
-            }
-    
-            voiceChannel.join().then(connection => {
-                const stream = ytdl('https://www.youtube.com/watch?v=83xBPCw5hh4&ab_channel=DaBaby', { filter: 'audioonly' });
-                const dispatcher = connection.play(stream);
-    
-                dispatcher.on('finish', () => voiceChannel.leave());
-            });
 
-
-
-
-
-
-
-        const id = msg.author.id
-        console.log(id)
-        const name = msg.member.user.tag;
-        console.log(name)
-        var information = [];
-        information.push(name, id)
-        var savedinfo = fs.readFileSync("./information.txt", {"encoding": "utf-8"});
+    //msg.channel.send('https://www.youtube.com/results?search_query=' + query)
+ 
+    const choice = args[0];
+    console.log(choice)
+   
+    const voiceChannel = msg.member.voice.channel;
+            let embed = new Discord.MessageEmbed();
+            /*if(musicQueue.some(url => url === youtubeUrl)) {
+                embed.setDescription("Url is already in queue.");
+            }else if(ytdl.validateURL(youtubeUrl))*/ {
+            musicQueue.push(youtubeUrl);
+            console.log(musicQueue); 
         
-      var newinfo = savedinfo;
-    fs.writeFileSync("information.txt", newinfo.toString())
-    
-    fs.appendFileSync("information.txt", information.toString())
-
-    fs.readFile("./information.txt", function (err, data) {
-        if (err) throw err;
-        var datata = data.toString('utf-8')
-        if(data.includes('Xurxx#7879')){
-         console.log((datata.length / 29) - .689655172413794)
+            if (msg.channel.type === 'dm') return;
+            if (!voiceChannel) {
+            return msg.reply('please join a voice channel first!');
         }
-      });
+        if (voiceChannel.connection){ return console.log('this works!!')}
+        else{
+
+            const embed = new Discord.MessageEmbed()
+                .setTitle('Now playing...')
+                .setURL(youtubeUrl)
+                .setDescription(youtubeUrl)
+                .setFooter("Yoinkbot collects your username and tag to improve our services. To find whats being collected contact the bot owner with the command '?owner'")
+            msg.channel.send(embed)
+            voiceChannel.join().then( connection => {
+            const stream = ytdl(musicQueue.toString(), { filter: 'audioonly' });
+            const dispatcher = connection.play(stream);
+                dispatcher.setVolume(0.40);
+            dispatcher.on('end', () => voiceChannel.leave());
+        
+        
+    
+    //} else {
+      //  embed.setDescription("Invalid YouTube URL!");
+
+
+        switch (choice){
+            case 'pause':
+                    dispatcher.pause()
+                    break;
+            case 'unpause':
+                    dispatcher.unpause()
+                    break;
+            case 'skip':
+                    musicQueue.shift()
+                    break;
+            case 'stop': {
+                dispatcher.pause()
+                musicQueue = []
+                break;
+                
+            }    
+        }
+    });
+    }
+}
+        
+            
+            //dispatcher.on('finish', () => voiceChannel.leave());            
+        
+                       
+
+
+    /*async playSong(connection, msg) {
+        const stream = ytdl(musicQueue[0], { filter: 'audioonly'});
+        console.log(musicQueue[0])
+        const dispatcher = connection.playStream(stream, streamOptions);
+        dispatcher.on('start', () => {
+            msg.channel.send("Playing song...");
+        });
+        
+        dispatcher.on('end', () => {
+            console.log("Finished song.");
+            musicQueue.shift();
+            if(musicQueue.length === 0) {
+                console.log("No more songs to be played...");
+            }
+            else {
+                setTimeout(() => {
+                    this.playSong(connection, msg);
+                }, 500)
+            }
+        })*/
     }
 }

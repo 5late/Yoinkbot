@@ -11,7 +11,7 @@ const opts = {
     type: 'video'
 };
 
-module.exports = class search extends commando.Command {
+module.exports = class SearchCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'search',
@@ -21,13 +21,15 @@ module.exports = class search extends commando.Command {
         })
     }
     async run (msg) {{
+        
             let embed = new Discord.MessageEmbed()
                 .setColor("#73ffdc")
                 .setDescription("Please enter a search query. Remember to narrow down your search.")
                 .setTitle("YouTube Search API");
-            let embedMsg = await message.channel.send(embed);
-            let filter = m => m.author.id === message.author.id;
-            let query = await message.channel.awaitMessages(filter, { max: 1 });
+            let embedMsg = await msg.channel.send(embed);
+            msg.channel.send(embedMsg)
+            let filter = m => m.author.id === msg.author.id;
+            let query = await msg.channel.awaitMessages(filter, { max: 1 });
             let results = await search(query.first().content, opts).catch(err => console.log(err));
             if(results) {
                 let youtubeResults = results.results;
@@ -37,24 +39,25 @@ module.exports = class search extends commando.Command {
                     return i + ") " + result.title;
                 });
                 console.log(titles);
-                message.channel.send({
+                msg.channel.send({
                     embed: {
                         title: 'Select which song you want by typing the number',
                         description: titles.join("\n")
                     }
                 }).catch(err => console.log(err));
                 
-                filter = m => (m.author.id === message.author.id) && m.content >= 1 && m.content <= youtubeResults.length;
-                let collected = await message.channel.awaitMessages(filter, { maxMatches: 1 });
+                filter = m => (m.author.id === msg.author.id) && m.content >= 1 && m.content <= youtubeResults.length;
+                let collected = await msg.channel.awaitMessages(filter, { maxMatches: 1 });
                 let selected = youtubeResults[collected.first().content - 1];
     
-                embed = new Discord.MessageEmbed()
+               const nembed = new Discord.MessageEmbed()
                     .setTitle(`${selected.title}`)
-                    .setURL(`${selected.link}`)
-                    .setDescription(`${selected.description}`)
-                    .setThumbnail(`${selected.thumbnails.default.url}`);
+                    //.setURL(`${selected.link}`)
+                    //.setDescription(`${selected.description}`)
+                    //.setThumbnail(`${selected.thumbnails.default.url}`);
                     console.log(embed)
-                message.channel.send(embed);
+                msg.channel.send(embedMsg);
+                msg.channel.send(nembed)
             }
         }
         var information = [];

@@ -11,11 +11,18 @@ module.exports = class SimprateCommand extends commando.Command {
             group: 'misc',
             memberName: 'simprate',
             description: 'Simp rate',
+            args:[
+                    { 
+                        key:'text',
+                        prompt: 'Name at least one person to simprate!',
+                        type: 'string',
+                    }
+                ]
         })
     }
 
     
-    async run (msg) {
+    async run (msg, { text }) {
 
         const id = msg.author.id
         console.log(id)

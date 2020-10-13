@@ -2,7 +2,8 @@ const commando = require('discord.js-commando');
 const client = commando.CommandoClient
 const fs = require('fs')
 const Discord = require('discord.js')
-const ytdl = require('ytdl-core')
+const ytdl = require('ytdl-core');
+//const QueueCommand = require('./QueueCommand');
 
 var musicQueue = [];
 
@@ -36,6 +37,8 @@ module.exports = class StopCommand extends commando.Command {
                 dispatcher.pause();
                 //dispatcher.on('finish', () => voiceChannel.leave());
         })};
+        //QueueCommand
+        dispatcher.pause()
 
 
 

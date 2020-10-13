@@ -15,7 +15,12 @@ module.exports = class OneThousandCommand extends commando.Command {
     
         const embed = new Discord.MessageEmbed()
         .setTitle('Reddit Info')
-        .setDescription('Yoinkbot collects memes from HOT on r/dankmemes')
+        .setDescription('Below find a list of the subreddit officially supported by Yoinkbot.')
+        .addFields({name:'r/dankmemes', value: 'Use command ?meme'})
+        .addFields({name:'r/programminghumour',value: 'Use command ?phumour'})
+        .addFields({name:'r/copypasta', value: 'Use command ?copypasta'})
+        .addFields({name:'r/food', value: 'Use command ?food'})
+        .addFields({name:'r/tifu', value: 'Use command ?tifu'})
         .setFooter("Yoinkbot collects your username and tag to improve our services. To find out whats being collected contact the bot owner with the command '?owner'")
 
         msg.channel.send(embed)
