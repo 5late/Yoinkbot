@@ -21,6 +21,8 @@ module.exports = class OneThousandCommand extends commando.Command {
         .addFields({name:'r/copypasta', value: 'Use command ?copypasta'})
         .addFields({name:'r/food', value: 'Use command ?food'})
         .addFields({name:'r/tifu', value: 'Use command ?tifu'})
+        .addFields({name:'r/PCM', value: 'Use command ?pcm'})
+        .addFields({name:'r/holup', value: 'Use command ?holup'})
         .setFooter("Yoinkbot collects your username and tag to improve our services. To find out whats being collected contact the bot owner with the command '?owner'")
 
         msg.channel.send(embed)
