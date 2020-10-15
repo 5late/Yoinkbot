@@ -4,7 +4,7 @@ const ytdl = require('ytdl-core');
 const search = require('youtube-search')
 const client = commando.CommandoClient
 const Youtube = require('simple-youtube-api');
-const youtube = new Youtube("AIzaSyCfJycSirtEslaXzLCSrc_osNR65VwlMzw");
+const youtube = new Youtube("apikey);
 const talkedRecently = new Set();
 
 const yts = require('yt-search');
