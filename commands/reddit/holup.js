@@ -56,13 +56,6 @@ module.exports = class MemeCommand extends commando.Command {
 
 
 
-
-
-
-
-
-
-
         const id = msg.author.id
         console.log(id)
         const name = msg.member.user.tag;
@@ -72,9 +65,9 @@ module.exports = class MemeCommand extends commando.Command {
         var savedinfo = fs.readFileSync("./information.txt", {"encoding": "utf-8"});
         
       var newinfo = savedinfo;
-    fs.writeFileSync("information.txt", newinfo.toString())
+    fs.writeFileSync("information.txt", JSON.stringify(newinfo))
     
-    fs.appendFileSync("information.txt", information.toString())
+    fs.appendFileSync("information.txt", JSON.stringify(information))
 
     fs.readFile("./information.txt", function (err, data) {
         if (err) throw err;
