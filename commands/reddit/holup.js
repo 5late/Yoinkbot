@@ -5,7 +5,7 @@ const Discord = require('discord.js')
 const talkedRecently = new Set();
 
 
-module.exports = class MemeCommand extends commando.Command {
+module.exports = class HolupCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'holup',
@@ -65,16 +65,14 @@ module.exports = class MemeCommand extends commando.Command {
         var savedinfo = fs.readFileSync("./information.txt", {"encoding": "utf-8"});
         
       var newinfo = savedinfo;
-    fs.writeFileSync("information.txt", JSON.stringify(newinfo))
+    fs.writeFileSync("information.txt", (newinfo))
     
-    fs.appendFileSync("information.txt", JSON.stringify(information))
+    fs.appendFileSync("information.txt", (information))
 
     fs.readFile("./information.txt", function (err, data) {
         if (err) throw err;
         var datata = data.toString('utf-8')
-        if(data.includes('Xurxx#7879')){
-         console.log((datata.length / 29) - .689655172413794)
-        }
+        console.log((datata.length / 29) - .689655172413794)
       });
     }
     // Adds the user to the set so that they can't talk for a minute

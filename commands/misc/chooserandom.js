@@ -25,7 +25,7 @@ module.exports = class OneThousandCommand extends commando.Command {
 let choices =[]
 choices.push(args)
 console.log(choices)
-const choice = choices[Math.floor(Math.random() * choices.length)];
+const choice = args[Math.floor(Math.random() * args.length)];
 
       const embed = new Discord.MessageEmbed()
       .setTitle('Random Choice Selector')

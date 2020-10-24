@@ -53,6 +53,12 @@ client.user.setPresence({
 	}
 })
 
+if (message.author.id === '342874810868826112' && message.channel.id === '761409251348185088'){
+	message.delete()
+}
+if (message.content === 'oscarEmoji'){
+	message.react('767051918198964274')
+}
 if (message.content === 'updates') {
 	message.reply('https://github.com/5late/Yoinkbot').then(message.react('🏘️'))
 }
@@ -122,12 +128,27 @@ if (message.content === 'nitropls') {
  }
 
  if (message.author.id === '567139094816096266'){
-	 message.react('756710527513657344')
+	message.react('🇫').then(
+		message.react('🇺').then(
+			message.react('🇷').then(
+				message.react('769390295359422474').then(
+					message.react('🇾')
+				)
+			)
+		)
+	)
  }
 
   if (message.content === 'Yeetus') {
  message.reply('Deletus');
  }
+
+ if (message.content === 'changeNick'){
+	 message.channel.send('Hello')
+ }
+ //if (message.mentions.members.first()){
+	// message.channel.send('hello')
+ //}
 
  if(message.content === 'activity'){
 	message.channel.send(`${client.guilds.cache.size} servers have ${client.users.cache.size} members`+` | ?help `, { type: 'WATCHING' })

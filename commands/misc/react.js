@@ -20,19 +20,27 @@ module.exports = class OneThousandCommand extends commando.Command {
         })
     }
     async run (msg, { text }) {
+        const society = '769377185734590494'
+    
       const args = msg.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
      msg.delete()
      //msg.react(args[0])
-      const amount = 2//(parseInt(msg.content.split(' ')[2])) + 1;
-        console.log('This works 1')
-      msg.channel.messages.fetch({
-          limit: amount,
-      }).then((messages) => {
-          messages.forEach(function(msg) {
-              msg.react(args[0]).catch(console.error);
-        })
-      });
+     const amount = (parseInt(0)) + 1;
+if (args[0] === 'society'){
+    args[0] = society
+}
+     msg.channel.messages.fetch({
+         limit: amount,
+     }).then((messages) => {
+         var i = 0;
+         messages.forEach(function(message) {
+             i++;
+             if (i === amount) {
+                 message.react(args[0]).catch(console.error);
+             }
+         })
+     });
      
 
         const id = msg.author.id

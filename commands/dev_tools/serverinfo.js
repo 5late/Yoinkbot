@@ -4,7 +4,7 @@ const client = new commando.CommandoClient;
 const Discord = require('discord.js')
 const prefix = '?'
 
-module.exports = class InfoCommand extends commando.Command {
+module.exports = class ServerInfoCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'd-serverinfo',

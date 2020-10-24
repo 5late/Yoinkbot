@@ -1,4 +1,5 @@
 const commando = require('discord.js-commando');
+const fs = require('fs')
 
 module.exports = class AttackCommand extends commando.Command {
     constructor(client) {
@@ -10,33 +11,15 @@ module.exports = class AttackCommand extends commando.Command {
         })
     }
     async run (msg) {
-        const maxhealth = "100";
-        const maxbothealth = "100";
-        const nmaxhealth = parseInt(maxhealth)
-        const nmaxbothealth = parseInt(maxbothealth)
-        
-        let health = '1'
-        let bothealth = '1'
-
-        function reset(){
-            let health = nmaxhealth;
-        }
-        function botreset(){
-            let bothealth = nmaxbothealth;
-        }
-                
-        function AttackNumber(min, max){
-        return Math.floor(min + Math.random()*(max + 1 - min))
-        }
-        const attackNumber = AttackNumber(40, 80);
-        console.log(attackNumber)
-        msg.channel.send(attackNumber)
-
+        const maxhealth = 100;
+        const maxbothealth = 100;        
         const args = msg.content.slice(1).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
-
         const choices = ['defend', 'attack']
-        
+
+        const defendNumber = Math.floor(Math.random() * 100)
+        const attackNumber = Math.floor(Math.random() * 100)
+
         const choice = args[0];
         if (!choice) return msg.channel.send(`How to play: use ?attack then your choice!`);
         if (!choices.includes(choice)) return msg.channel.send(`Only these responses are accepted: \`${choices.join(', ')}\``);
@@ -46,35 +29,24 @@ module.exports = class AttackCommand extends commando.Command {
         
         switch(choice) {
             case 'defend': {
-                msg.reply('You defended yourself! ' + attackNumber + ' was added to your health.')
-                //let health = '100';
-                function reset(){
-                    let health = nmaxhealth;
-                const nhealth = parseInt(health)   
-            let currenthealth = nhealth + attackNumber;
-            const ncurrenthealth = parseInt(currenthealth)
-            console.log(ncurrenthealth)
-            }
-            reset;
+                if(maxhealth <100){
+                msg.reply('You defended yourself! ' + defendNumber + ' was added to your health.')
+                let newmaxhealth = maxhealth + defendNumber;
             break;
+                }else{
+                    msg.reply('You already have too much health!!')
+                }
             }
             case 'attack': {
                 msg.reply('You attacked me! I was hit for ' + attackNumber + ' damage!')
-                let bothealth = '100';
-                function botreset(){
-                    let bothealth = nmaxbothealth;
-                const nbothealth = parseInt(bothealth)
+                let newbothealth = maxbothealth - attackNumber;
+                if(newbothealth <= 0){
+                    msg.reply('I am dead! You win!')
                 }
-                botreset;
-            let currentbothealth = nbothealth - attackNumber;
-            const ncurrentbothealth = parseInt(currentbothealth)
-            console.log(ncurrentbothealth)
             break;
             }
         }
-       if(bothealth = 0) {
-           msg.reply('I am dead! You win!')
-       }
+      
        const id = msg.author.id
         console.log(id)
         const name = msg.member.user.tag;
