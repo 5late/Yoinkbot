@@ -53,9 +53,11 @@ client.user.setPresence({
 	}
 })
 
-if (message.author.id === '342874810868826112' && message.channel.id === '761409251348185088'){
-	message.delete()
+//console.log(config.ownerId)
+if(message.author.id === config.ownerId && message.content.startsWith('!status')){
+	message.channel.send('Yoinkbot functional. All systems running as usual. Use ?help for information.')
 }
+
 if (message.content === 'oscarEmoji'){
 	message.react('767051918198964274')
 }
@@ -63,7 +65,7 @@ if (message.content === 'updates') {
 	message.reply('https://github.com/5late/Yoinkbot').then(message.react('🏘️'))
 }
 
- if(message.author.bot) return;
+ /*if(message.author.bot) return;
 
     if(message.content.toLowerCase() === '?search') {
         let embed = new Discord.MessageEmbed()
@@ -90,7 +92,7 @@ if (message.content === 'updates') {
             }).catch(err => console.log(err));
 
             filter = m => (m.author.id === message.author.id) && m.content >= 1 && m.content <= youtubeResults.length;
-            let collected = await message.channel.awaitMessages(filter, { maxMatches: 1 });
+            let collected = await message.channel.createMessageCollector(filter, { maxMatches: 1 });
             let selected = youtubeResults[collected.first().content - 1];
 
             embed = new Discord.MessageEmbed()
@@ -101,7 +103,7 @@ if (message.content === 'updates') {
 				console.log(embed)
             message.channel.send(embedMsg);
         }
-    }
+    }*/
 
 
 /*if (message.content.includes('penis')){

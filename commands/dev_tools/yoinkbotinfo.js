@@ -17,19 +17,15 @@ module.exports = class BotInfoCommand extends commando.Command {
         })
     }
     async run (msg) {
-            const args = msg.content.slice(prefix.length).trim().split(/ +/g);
-            const command = args.shift().toLowerCase();
-            const ruser = msg.mentions.users.first() || msg.author;
+    const args = msg.content.slice(prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
             
-    const guild = msg.guild
-    //const owner = msg.guild.member(guild.owner) ? guild.owner.toString() : guild.owner.user.tag;
-    // if the user is in that guild it will mention him, otherwise it will use .tag
-    const roleCount = msg.guild.roles.cache.size;
+    
     const serversIn = 7
     const totalUsers = 123
-    //const yoinkBot = '724989158891847700'
+    
     const serverIcon = 'https://cdn.discordapp.com/embed/avatars/1.png'
-    //const duration =  moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
+    
     let uptime = ms(this.client.uptime, { long: true });
 
     fs.readFile("./information.txt", function (err, data) {
@@ -51,6 +47,8 @@ module.exports = class BotInfoCommand extends commando.Command {
     .addField("Add Yoinkbot to your server!", "[Click here](https://discord.com/oauth2/authorize?client_id=724989158891847700&permissions=2147483639&scope=bot)")
     msg.channel.send(embed)
 });
+
+
     const id = msg.author.id
     console.log(id)
     const name = msg.member.user.tag;

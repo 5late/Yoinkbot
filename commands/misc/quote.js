@@ -1,23 +1,35 @@
 const commando = require('discord.js-commando');
 const fs = require('fs')
-module.exports = class OneThousandCommand extends commando.Command {
+
+module.exports = class QuoteCommand extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'onek',
+            name: 'quote',
             group: 'misc',
-            memberName: 'onek',
-            description: 'Adds one to a number then sends, until 1000',
+            memberName: 'quote',
+            description: 'Quote something, by someone.',
+            args:[
+                { 
+                    key:'text',
+                    prompt: 'What would you like to say?',
+                    type: 'string',
+                }
+              ]
             
         })
       }
-    async run (msg) {
-           
-        var i;
-        for (i = 0; i < 1001; i++) {
-          await new Promise(r => setTimeout(r, 1300));
-          console.log("The number is " + i)
-          msg.channel.send(i)
-        }
+    async run (msg, { text }) {   
+        const args = msg.content.slice(prefix.length).trim().split(/ +/g);
+        const command = args.shift().toLowerCase();
+        let rMember = msg.guild.member(msg.mentions.users.first() || msg.guild.members.cache.get(args[0]))
+
+
+        let finalMessage = text - args[0]
+        let finalMessages = text.replace(rMember, '')
+        //msg.channel.send(finalMessage)
+        msg.channel.send(finalMessages + `\n-${rMember}`)
+
+
         const id = msg.author.id
         console.log(id)
         const name = msg.member.user.tag;
