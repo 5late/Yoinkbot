@@ -21,8 +21,8 @@ module.exports = class BotInfoCommand extends commando.Command {
     const command = args.shift().toLowerCase();
             
     
-    const serversIn = 7
-    const totalUsers = 123
+    const serversIn = 8
+    const totalUsers = 134
     
     const serverIcon = 'https://cdn.discordapp.com/embed/avatars/1.png'
     
@@ -44,6 +44,7 @@ module.exports = class BotInfoCommand extends commando.Command {
     .addFields({name: "# of Members", value: totalUsers, inline: true})
     .addFields({name: 'Command Count', value: timesUsed})
     .addFields({name: 'Uptime', value: uptime, inline: true})
+    .addField('Did you know we have a beta bot?', 'It gets bleeding edge commands before Yoinkbot does! Use command ?invite to get the link!')
     .addField("Add Yoinkbot to your server!", "[Click here](https://discord.com/oauth2/authorize?client_id=724989158891847700&permissions=2147483639&scope=bot)")
     msg.channel.send(embed)
 });

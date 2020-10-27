@@ -21,13 +21,15 @@ module.exports = class QuoteCommand extends commando.Command {
     async run (msg, { text }) {   
         const args = msg.content.slice(prefix.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
-        let rMember = msg.guild.member(msg.mentions.users.first() || msg.guild.members.cache.get(args[0]))
+        let rMember = msg.guild.member(msg.mentions.users.first())// || msg.guild.members.cache.get(args[0]))
 
 
-        let finalMessage = text - args[0]
-        let finalMessages = text.replace(rMember, '')
+
+        
+        //let finalMessage = text - args[0]
+        let finalMessages = await text.replace(args[0], '')
         //msg.channel.send(finalMessage)
-        msg.channel.send(finalMessages + `\n-${rMember}`)
+        await msg.channel.send(finalMessages + `\n-${rMember}`)
 
 
         const id = msg.author.id
