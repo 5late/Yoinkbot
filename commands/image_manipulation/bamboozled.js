@@ -1,42 +1,44 @@
 const commando = require('discord.js-commando');
 const fs = require('fs');
 const { DiscordAPIError } = require('discord.js');
-const Discord = require('discord.js');
-const { finished } = require('stream');
+const Discord = require('discord.js')
 const prefix  = '?'
+const Canvas = require('canvas');
+const { createGzip } = require('zlib');
+
 module.exports = class OneThousandCommand extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'doot',
-            group: 'misc',
-            memberName: 'doot',
-            description: 'Doot a message',
-            args:[
-              { 
-                  key:'text',
-                  prompt: 'What would you like me to doot?',
-                  type: 'string',
-              }
-          ]
+            name: 'bamboozled',
+            group: 'image_manipulation',
+            memberName: 'bamboozled',
+            description: 'When you get bamboozled...',
+            aliases: ['bamboozle']
         })
     }
     async run (msg, { text }) {
       const args = msg.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
-let finalsend = []
-if (args.length > 14){
-    msg.channel.send('too long')
-}else{
-    var i;
-    text.split(' ')
-for (i = 0; i < args.length; i++) {
-    finalsend.push(args[i])
-    finalsend.push('🎺 💀')
-}
-console.log(finalsend)
-msg.channel.send(finalsend.join(" "))
-}
+
       
+        let rMember = msg.guild.member(msg.mentions.users.first())
+
+
+        const canvas = Canvas.createCanvas(540,360)
+        const ctx = canvas.getContext('2d');
+
+        const background = await Canvas.loadImage('./bamboozled.jpg')
+        ctx.drawImage(background, 0,0, canvas.width, canvas.height)
+
+        const avatar = await Canvas.loadImage(msg.author.displayAvatarURL({ format: 'jpg' }));
+        ctx.drawImage(avatar, 125, 10, 65, 90);
+        ctx.drawImage(avatar, 300, 40, 75, 100);
+
+        const attachment = new Discord.MessageAttachment(canvas.toBuffer(), `bamboozled.png`)
+      
+        msg.channel.send(attachment)
+        
+        
         const id = msg.author.id
         console.log(id)
         const name = msg.member.user.tag;

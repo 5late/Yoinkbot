@@ -1,4 +1,6 @@
 const commando = require('discord.js-commando');
+const { DiscordAPIError } = require('discord.js');
+const Discord = require('discord.js')
 
 module.exports = class PingPongCommand extends commando.Command {
     constructor(client) {
@@ -10,15 +12,18 @@ module.exports = class PingPongCommand extends commando.Command {
         })
     }
     async run (msg) {
-        var pongg;
-        for (var i; i<100; i++){
-            if(i % 2) {
-                var pongg = 'pong!'
-            }
-            else {
-                var pongg = 'pongy!'
-            }
-        }
-        msg.reply(pongg)
+        msg.channel.send('------------------>')
+        await msg.channel.send('<------------------')
+        const embed = new Discord.MessageEmbed()
+        .setTitle('Pong! See details below:')
+        .setAuthor(`${msg.author.username}`, `${msg.author.displayAvatarURL()}`)
+        .addField(`Status command`, `?status`)
+        .addField(`Help command:`, `?help`)
+        .addField(`Ping Command:`, `?ping`)
+        .addField(`Yoinkbot Stats:`, `?ybstats`)
+        .addField(`Owner command:`, `?owner`)
+        .setFooter(`Xurxx #7879`)
+
+        msg.channel.send(embed)
     }
 }

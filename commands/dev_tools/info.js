@@ -29,7 +29,7 @@ module.exports = class InfoCommand extends commando.Command {
                let randomColor = '#'+Math.floor(Math.random()*0xFFFFFF).toString(16).padStart(6,'0');
                let nickname = member.displayName;
                console.log(randomColor)
-               
+               console.log(ruser)
             
               if(!rMember) 
                 return msg.reply("Who that user? I dunno him.") // if there is no user mentioned, or provided, it will say this

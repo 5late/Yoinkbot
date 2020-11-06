@@ -4,38 +4,29 @@ const { DiscordAPIError } = require('discord.js');
 const Discord = require('discord.js');
 const { finished } = require('stream');
 const prefix  = '?'
-module.exports = class OneThousandCommand extends commando.Command {
+module.exports = class VaporCommand extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'doot',
+            name: 'vapor',
             group: 'misc',
-            memberName: 'doot',
+            memberName: 'vapor',
             description: 'Doot a message',
             args:[
               { 
                   key:'text',
-                  prompt: 'What would you like me to doot?',
+                  prompt: 'What would you like me to vapor-?',
                   type: 'string',
               }
           ]
         })
     }
     async run (msg, { text }) {
+        var finalSend = [];
       const args = msg.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
-let finalsend = []
-if (args.length > 14){
-    msg.channel.send('too long')
-}else{
-    var i;
-    text.split(' ')
-for (i = 0; i < args.length; i++) {
-    finalsend.push(args[i])
-    finalsend.push('🎺 💀')
-}
-console.log(finalsend)
-msg.channel.send(finalsend.join(" "))
-}
+
+        finalSend.push(text)
+      msg.channel.send(finalSend.join(' '))
       
         const id = msg.author.id
         console.log(id)

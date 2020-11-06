@@ -5,6 +5,7 @@ const Discord = require('discord.js')
 const fs = require('fs')
 const prefix = '?'
 const querystring = require('querystring');
+const axios = require('axios')
 
 module.exports = class OneThousandCommand extends commando.Command {
     constructor(client) {
@@ -20,29 +21,21 @@ module.exports = class OneThousandCommand extends commando.Command {
         const args = msg.content.slice(prefix.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
         //const igUsername = args[0].toLowerCase();
-        if (!args.length) {
-            return message.channel.send('You need to supply a search term!');
-          }
+       
         const query = querystring.stringify({ term: args.join(' ') });
 
-    const { definition } = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${query}`).then(response => response.json());
+   axios 
+   .get(
+    `https://api.dictionaryapi.dev/api/v2/entries/en/hello`   
+    )
+   .then(response => {
+       let apiData = response;
+       let definition = apiData.definition;
 
-console.log(definition)
-     // msg.channel.send(file);
-     const trim = (str, max) => ((str.length > max) ? `${str.slice(0, max - 3)}...` : str);
-     const [answer] = definition;
+       msg.reply(definition)
+   }
+   )
 
- const embed = new Discord.MessageEmbed()
-     .setColor('#EFFF00')
-     .setTitle(answer.word + ' Definition on the Dictionary')
-     .setURL(answer.permalink)
-     .addFields(
-         { name: 'Definition', value: answer},
-         //{ name: 'Example', value:  },
-         )
-     .setFooter("Yoinkbot collects your username and tag to improve our services. To fnd out whats being collected, use the command '?owner'");
-
- msg.channel.send(embed);
         /*const res = await fetch(url).then(resUrl => resUrl.json()).catch(err => {
            console.log(`An error occurred: ${err}`);
            return message.reply('Something went wrong!');

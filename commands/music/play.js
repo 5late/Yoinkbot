@@ -22,9 +22,9 @@ var musicQueue = [];
 module.exports = class QueueCommand extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'play',
+            name: 'p',
             group: 'music',
-            memberName: 'play',
+            memberName: 'p',
             description: 'Queue a song for the bot to play.',
             argsType: 'single'
         })

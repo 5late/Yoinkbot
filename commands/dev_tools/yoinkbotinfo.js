@@ -1,7 +1,7 @@
 const commando = require('discord.js-commando');
 const fs = require('fs')
 const Discord = require('discord.js')
-const client = new Discord.Client();
+const client = new commando.CommandoClient()
 const prefix = '?'
 const moment = require("moment"); 
 require("moment-duration-format");
@@ -21,8 +21,8 @@ module.exports = class BotInfoCommand extends commando.Command {
     const command = args.shift().toLowerCase();
             
     
-    const serversIn = 8
-    const totalUsers = 134
+    const serversIn = 9
+    const totalUsers = 158
     
     const serverIcon = 'https://cdn.discordapp.com/embed/avatars/1.png'
     
@@ -32,7 +32,7 @@ module.exports = class BotInfoCommand extends commando.Command {
         if (err) throw err;
         var datata = data.toString('utf-8')
         //(datata.length / 30) - .7
-        const timesUsed = ((datata.length/30)-.7) + 2500
+        const timesUsed = ((Math.floor(datata.length/30))) + 2500
     
 
     const embed = new Discord.MessageEmbed()
@@ -42,7 +42,7 @@ module.exports = class BotInfoCommand extends commando.Command {
     .addFields({name: 'Bot Owner: ', value: 'Xurxx#7879'})
     .addFields({name: "Server Count: ", value: serversIn, inline: true})
     .addFields({name: "# of Members", value: totalUsers, inline: true})
-    .addFields({name: 'Command Count', value: timesUsed})
+    .addFields({name: 'Commands used: ', value: timesUsed})
     .addFields({name: 'Uptime', value: uptime, inline: true})
     .addField('Did you know we have a beta bot?', 'It gets bleeding edge commands before Yoinkbot does! Use command ?invite to get the link!')
     .addField("Add Yoinkbot to your server!", "[Click here](https://discord.com/oauth2/authorize?client_id=724989158891847700&permissions=2147483639&scope=bot)")

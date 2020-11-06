@@ -1,42 +1,28 @@
 const commando = require('discord.js-commando');
 const fs = require('fs');
 const { DiscordAPIError } = require('discord.js');
-const Discord = require('discord.js');
-const { finished } = require('stream');
+const Discord = require('discord.js')
 const prefix  = '?'
 module.exports = class OneThousandCommand extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'doot',
+            name: 'vinvite',
             group: 'misc',
-            memberName: 'doot',
-            description: 'Doot a message',
-            args:[
-              { 
-                  key:'text',
-                  prompt: 'What would you like me to doot?',
-                  type: 'string',
-              }
-          ]
+            memberName: 'vinvite',
+            description: 'Invite someone to a call!',
         })
     }
     async run (msg, { text }) {
       const args = msg.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
-let finalsend = []
-if (args.length > 14){
-    msg.channel.send('too long')
-}else{
-    var i;
-    text.split(' ')
-for (i = 0; i < args.length; i++) {
-    finalsend.push(args[i])
-    finalsend.push('🎺 💀')
-}
-console.log(finalsend)
-msg.channel.send(finalsend.join(" "))
-}
+
       
+      let voiceChannel = msg.member.voice.channel;
+
+        let invite = await msg.channel.createInvite()
+
+        msg.channel.send(invite)
+        
         const id = msg.author.id
         console.log(id)
         const name = msg.member.user.tag;
