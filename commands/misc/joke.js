@@ -6,7 +6,7 @@ const fs = require('fs')
 const axios = require('axios')
 const prefix = '?'
 
-module.exports = class DogCommand extends commando.Command {
+module.exports = class JokeCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'joke',
@@ -29,19 +29,25 @@ module.exports = class DogCommand extends commando.Command {
             return joke;
         };
         let jokeValue = await getJoke();
-        msg.channel.send(jokeValue.setup)
-        msg.channel.send(jokeValue.punchline)
+        const Msg = await msg.channel.send(jokeValue.setup + ' | React with ▶️ to send punchline!')
 
-     // msg.channel.send(file);
-   
-        /*const res = await fetch(url).then(resUrl => resUrl.json()).catch(err => {
-           console.log(`An error occurred: ${err}`);
-           return message.reply('Something went wrong!');
+        Msg.react('▶️')
+
+        const filter = (reaction, user) => {
+            return reaction.emoji.name === '▶️' && user.id === msg.author.id;
+        }
+
+        const collector = Msg.createReactionCollector(filter, { time: 15000 });
+
+        collector.on('collect', (reaction, user) => {
+            console.log(`Collected ${reaction.emoji.name} from ${user.tag}`);
+            msg.channel.send(jokeValue.punchline)
+            Msg.edit(jokeValue.setup)
         });
-        const embed = new Discord.MessageEmbed()
-        .setTitle('Fetching...')
-        .setURL(url)
-        msg.channel.send(embed)*/
+        
+        collector.on('end', collected => {
+            console.log(`Collected ${collected.size} items`)
+        });
 
 
         const id = msg.author.id

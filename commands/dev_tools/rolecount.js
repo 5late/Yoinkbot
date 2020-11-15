@@ -3,7 +3,7 @@ const prefix = '?'
 const fs = require('fs')
 const Discord = require('discord.js')
 
-module.exports = class OneThousandCommand extends commando.Command {
+module.exports = class RoleCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'd-roles',
@@ -21,7 +21,7 @@ module.exports = class OneThousandCommand extends commando.Command {
     let membersWithRole = msg.guild.members.cache.filter(member => { 
         return member.roles.cache.find(guild => guild.name === roleName);
     }).map(member => {
-        return member.user.tag;
+        return `<@${member.user.id}>`;
     })
 
     let embed = new Discord.MessageEmbed()

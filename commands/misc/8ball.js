@@ -22,16 +22,16 @@ module.exports = class EightBallCommand extends commando.Command {
     async run (msg, { text }) {
       const args = msg.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
-const eightball =['Yes', 'No', 'Ask again', 'Never', 'For sure']
+const eightball =['Yes', 'No', 'Ask again', 'Never', 'For sure', 'Without a doubt', 'No possibility', 'Absolutely not', 'My magic tells me yes']
 const answer = eightball[Math.floor(Math.random() * eightball.length)];
 
 
 console.log(args)
       const embed = new Discord.MessageEmbed()
-      .setTitle('The 8BALL')
-      .setDescription(msg.author.username + ': ' + text )
-      .addFields({name: 'The 8ball responds: ', value: answer})
-      .setFooter("Yoinkbot collects your username and tag to improve our services. To find out whats being collected contact the bot owner with the command '?owner'")
+      .setTitle(`${text}:`)
+      .setAuthor(msg.author.username, msg.author.displayAvatarURL())
+      .setDescription(answer)
+      .setFooter(`Yoinkbot`, `https://cdn.discordapp.com/embed/avatars/1.png`)
 
       msg.channel.send(embed)
         

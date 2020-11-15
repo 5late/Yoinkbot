@@ -31,8 +31,12 @@ module.exports = class RollCommand extends commando.Command {
       }
       const randomNumber = getRandomIntInclusive(args[0], args[1])
       console.log(args[0], args[1])
-      msg.channel.send(randomNumber)
-        
+
+      const embed = new Discord.MessageEmbed()
+      .setTitle(randomNumber)
+      msg.channel.send(embed)
+      
+      
         const id = msg.author.id
         console.log(id)
         const name = msg.member.user.tag;

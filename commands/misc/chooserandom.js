@@ -28,10 +28,10 @@ console.log(choices)
 const choice = args[Math.floor(Math.random() * args.length)];
 
       const embed = new Discord.MessageEmbed()
-      .setTitle('Random Choice Selector')
+      .setTitle(`${choice}`)
+      .setAuthor(`Random Choice Generator`)
       .setColor('#00CCFF')
-      .setDescription('I selected ' + choice)
-      .setFooter("Yoinkbot collects your username and tag to improve our services. To find out whats being collected contact the bot owner with the command '?owner'")
+      .setFooter(`Yoinkbot`,`https://cdn.discordapp.com/embed/avatars/1.png`)
 
       msg.channel.send(embed)
 choices= [];

@@ -39,9 +39,9 @@ const response = responses[Math.floor(Math.random()* responses.length)];
 console.log(args)
       const embed = new Discord.MessageEmbed()
       .setTitle(msg.author.username + ' asked Trump: ' + text)
-      .setImage(image)
+      .setThumbnail(image)
       .setDescription('Trump answered with: ' + response)
-      .setFooter("Yoinkbot collects your username and tag to improve our services. To find out whats being collected contact the bot owner with the command '?owner'")
+      .setFooter(`Yoinkbot`, `https://cdn.discordapp.com/embed/avatars/1.png`)
 
       msg.channel.send(embed)
         

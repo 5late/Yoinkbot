@@ -25,7 +25,7 @@
     "icu_ver_major": "67",
     "is_debug": 0,
     "llvm_version": "0.0",
-    "napi_build_version": "6",
+    "napi_build_version": "7",
     "node_byteorder": "little",
     "node_debug_lib": "false",
     "node_enable_d8": "false",
@@ -72,7 +72,7 @@
     "v8_trace_maps": 0,
     "v8_use_siphash": 1,
     "want_separate_host_toolset": 0,
-    "nodedir": "/home/christian/.cache/node-gyp/14.10.0",
+    "nodedir": "/home/christian/.cache/node-gyp/14.12.0",
     "standalone_static_library": 1
   }
 }
