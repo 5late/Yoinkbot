@@ -17,6 +17,9 @@ module.exports = class AttackCommand extends commando.Command {
         const command = args.shift().toLowerCase();
         const choices = ['defend', 'attack']
 
+        var currenthealth = [];
+        var botcurrenthealth = [];
+
         const defendNumber = Math.floor(Math.random() * 100)
         const attackNumber = Math.floor(Math.random() * 100)
 
@@ -29,9 +32,8 @@ module.exports = class AttackCommand extends commando.Command {
         
         switch(choice) {
             case 'defend': {
-                if(maxhealth <100){
-                msg.reply('You defended yourself! ' + defendNumber + ' was added to your health.')
-                let newmaxhealth = maxhealth + defendNumber;
+                if(currenthealth <100){
+                currenthealth.push(25)
             break;
                 }else{
                     msg.reply('You already have too much health!!')
