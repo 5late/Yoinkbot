@@ -8,13 +8,13 @@ const config = require(path.join(__dirname, '..', '..', 'config', 'config.json')
 const apitoken = config.apitoken
 const axios = require('axios')
 
-module.exports = class WeatherCommand extends commando.Command {
+module.exports = class YouTubeSearchCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'youtube',
             group: 'misc',
             memberName: 'youtube',
-            description: 'Search YouTube returns link.',
+            description: 'Search YouTube. Returns link.',
         })
     }
     async run (msg) {
