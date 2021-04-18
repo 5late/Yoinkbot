@@ -22,7 +22,7 @@ module.exports = class EightBallCommand extends commando.Command {
     async run (msg, { text }) {
       const args = msg.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
-const eightball =['Yes', 'No', 'Ask again', 'Never', 'For sure', 'Without a doubt', 'No possibility', 'Absolutely not', 'My magic tells me yes']
+const eightball =['Ask again', 'Never', 'For sure', 'Without a doubt', 'No possibility', 'Absolutely not', 'My magic tells me yes', 'There is a chance', 'Not in your lifetime', 'Is the sky blue?', 'Not worth asking.']
 const answer = eightball[Math.floor(Math.random() * eightball.length)];
 
 
@@ -34,27 +34,5 @@ console.log(args)
       .setFooter(`Yoinkbot`, `https://cdn.discordapp.com/embed/avatars/1.png`)
 
       msg.channel.send(embed)
-        
-        
-        const id = msg.author.id
-        console.log(id)
-        const name = msg.member.user.tag;
-        console.log(name)
-        var information = [];
-        information.push(name, id)
-        var savedinfo = fs.readFileSync("./information.txt", {"encoding": "utf-8"});
-        
-      var newinfo = savedinfo;
-    fs.writeFileSync("information.txt", newinfo.toString())
-    
-    fs.appendFileSync("information.txt", information.toString())
-
-    fs.readFile("./information.txt", function (err, data) {
-        if (err) throw err;
-        var datata = data.toString('utf-8')
-        if(data.includes('Xurxx#7879')){
-         console.log((datata.length / 29) - .689655172413794)
-        }
-      });
-    }
+}
 }
