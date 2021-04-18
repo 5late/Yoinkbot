@@ -27,9 +27,9 @@ var ysearch = [];
 module.exports = class QueueCommand extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'q',
+            name: 'qc',
             group: 'music',
-            memberName: 'q',
+            memberName: 'qc',
             description: 'Queue a song for the bot to play.',
             argsType: 'single'
         })
