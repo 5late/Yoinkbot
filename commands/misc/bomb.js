@@ -3,7 +3,7 @@ const fs = require('fs');
 const { DiscordAPIError } = require('discord.js');
 const Discord = require('discord.js')
 const prefix  = '?'
-module.exports = class EightBallCommand extends commando.Command {
+module.exports = class BombCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'bomb',
