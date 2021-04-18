@@ -4,4 +4,4 @@ token.json
 info.json
 QueueCommand.js
 logs
-config/
+config.json
