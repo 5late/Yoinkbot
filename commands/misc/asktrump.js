@@ -36,13 +36,11 @@ const image = trumpImage[Math.floor(Math.random() * trumpImage.length)];
 
 const responses = ['Drink Bleach!', 'Fake NEWS!', 'VOTE!!!!!', 'CHINA!', 'CORRUPT!!!!!', 'MAKE AMERICA GREAT AGAIN!!!', 'OBAMAGATE!!!!', 'You are the enemy of the people.', 'LAW AND ORDER!!!!', 'RIGGED ELECTION!!!', 'CROOKED HILLARY!!', 'SLEEPY JOE!!']
 const response = responses[Math.floor(Math.random()* responses.length)];
-console.log(args)
-      const embed = new Discord.MessageEmbed()
+const embed = new Discord.MessageEmbed()
+      .setAuthor(`Yoinkbot`, `https://cdn.discordapp.com/embed/avatars/1.png`)
       .setTitle(msg.author.username + ' asked Trump: ' + text)
       .setThumbnail(image)
       .setDescription('Trump answered with: ' + response)
-      .setFooter(`Yoinkbot`, `https://cdn.discordapp.com/embed/avatars/1.png`)
-
       msg.channel.send(embed)
     }
 }
