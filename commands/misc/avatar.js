@@ -10,7 +10,7 @@ const {Client} = require('discord.js')
 const client = new Discord.Client();
 client.token = config.token;
 
-module.exports = class OneThousandCommand extends commando.Command {
+module.exports = class AvatarCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'avatar',
