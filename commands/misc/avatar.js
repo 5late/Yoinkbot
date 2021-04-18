@@ -21,13 +21,12 @@ module.exports = class OneThousandCommand extends commando.Command {
         })
     }
     async run (msg) {
-        let chance = Math.floor(Math.random()* 20)+1
-        
         const args = msg.content.slice(prefix.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
         
         
         if(!args.length){
+        
         let ruser = msg.author;
         var avatar = ruser.displayAvatarURL({dynamic: true})
         let embed = new Discord.MessageEmbed()
@@ -36,19 +35,21 @@ module.exports = class OneThousandCommand extends commando.Command {
         .setURL(avatar)
         .setColor('#275BF0')
         msg.channel.send(embed)
+
         }else{
+
         let thanos = client.users.fetch(args[0]);
 
         thanos.then(function(result1) {
+
         let embed = new Discord.MessageEmbed()
         .setTitle('Avatar URL')
         .setImage(result1.displayAvatarURL({dynamic: true}))
         .setURL(result1.avatarURL())
         .setColor('#275BF0')
+
         msg.channel.send(embed)
-    
         });
-            //var avatar = ruser.displayAvatarURL({dynamic: true})
         }
     }
 }
