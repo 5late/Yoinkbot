@@ -28,7 +28,7 @@ module.exports = class OneThousandCommand extends commando.Command {
         const canvas = Canvas.createCanvas(540,360)
         const ctx = canvas.getContext('2d');
 
-        const background = await Canvas.loadImage('./punched.jpg')
+        const background = await Canvas.loadImage('./imgs/punched.jpg')
         ctx.drawImage(background, 0,0, canvas.width, canvas.height)
 
         const avatar = await Canvas.loadImage(rMember.user.displayAvatarURL({ format: 'jpg' }));

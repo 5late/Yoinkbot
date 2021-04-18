@@ -30,7 +30,7 @@ module.exports = class OneThousandCommand extends commando.Command {
 
         ctx.globalAlpha = 0.5
 
-        const background = await Canvas.loadImage('./communism.gif')
+        const background = await Canvas.loadImage('./imgs/communism.gif')
         ctx.drawImage(background, 0,0, canvas.width, canvas.height)
 
         const avatar = await Canvas.loadImage(rMember.user.displayAvatarURL({ format: 'png' }));
