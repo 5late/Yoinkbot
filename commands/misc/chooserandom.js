@@ -3,7 +3,7 @@ const fs = require('fs');
 const { DiscordAPIError } = require('discord.js');
 const Discord = require('discord.js')
 const prefix  = '?'
-module.exports = class OneThousandCommand extends commando.Command {
+module.exports = class ChooseCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'choose',
