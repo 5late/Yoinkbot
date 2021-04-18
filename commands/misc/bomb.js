@@ -10,7 +10,6 @@ module.exports = class EightBallCommand extends commando.Command {
             group: 'misc',
             memberName: 'bomb',
             description: 'A hydrogen bomb about to explode. Requested by Liam.',
-            
         })
     }
     async run (msg, { text }) {
