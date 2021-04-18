@@ -22,16 +22,18 @@ module.exports = class OneThousandCommand extends commando.Command {
     async run (msg, { text }) {
       const args = msg.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
-let choices =[]
-choices.push(args)
-console.log(choices)
-const choice = args[Math.floor(Math.random() * args.length)];
+      
+      let choices =[]
+      
+      choices.push(args)
+      
+      const choice = args[Math.floor(Math.random() * args.length)];
 
       const embed = new Discord.MessageEmbed()
       .setTitle(`${choice}`)
-      .setAuthor(`Random Choice Generator`)
+      .setFooter(`Random Choice Generator`, msg.author.displayAvatarURL())
       .setColor('#00CCFF')
-      .setFooter(`Yoinkbot`,`https://cdn.discordapp.com/embed/avatars/1.png`)
+      .setAuthor(`Yoinkbot`,`https://cdn.discordapp.com/embed/avatars/1.png`)
 
       msg.channel.send(embed)
       choices= [];
