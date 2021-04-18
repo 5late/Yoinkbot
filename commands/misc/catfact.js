@@ -22,39 +22,12 @@ module.exports = class JokeCommand extends commando.Command {
         //const igUsername = args[0].toLowerCase();
         
         let getJoke = async () => {
-            let response = await axios.get(
+            let response = await fetch(
                 "https://cat-fact.herokuapp.com/facts"
-            );
-            GET `/facts/random?animal_type=cat&amount=2`
-            let joke = response.Fact;
-            return joke;
+            )
+            console.log(response)
         };
         let jokeValue = await getJoke();
-        await msg.channel.send(jokeValue + ' | React with ▶️ to send punchline!')
-
-        
-       
-
-
-        const id = msg.author.id
-        console.log(id)
-        const name = msg.member.user.tag;
-        console.log(name)
-        var information = [];
-        information.push(name, id)
-        var savedinfo = fs.readFileSync("./information.txt", {"encoding": "utf-8"});
-
-      var newinfo = savedinfo;
-    fs.writeFileSync("information.txt", newinfo.toString())
-    
-    fs.appendFileSync("information.txt", information.toString())
-
-    fs.readFile("./information.txt", function (err, data) {
-        if (err) throw err;
-        var datata = data.toString('utf-8')
-        if(data.includes('Xurxx#7879')){
-         console.log((datata.length / 29) - .689655172413794)
-        }
-      });
+        await msg.channel.send(jokeValue.text + ' | React with ▶️ to send punchline!')
     }
 }
