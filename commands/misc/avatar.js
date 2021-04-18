@@ -4,6 +4,11 @@ const fetch = require('node-fetch')
 const Discord = require('discord.js')
 const fs = require('fs')
 const prefix = '?'
+const path = require('path');
+const config = require(path.join(__dirname, '../../config', 'config.json'))
+const {Client} = require('discord.js')
+const client = new Discord.Client();
+client.token = config.token;
 
 module.exports = class OneThousandCommand extends commando.Command {
     constructor(client) {
@@ -25,8 +30,6 @@ module.exports = class OneThousandCommand extends commando.Command {
         if(!args.length){
         let ruser = msg.author;
         var avatar = ruser.displayAvatarURL({dynamic: true})
-        //var member= msg.member.mentions.first();
-        //const users = member.displayAvatarURL({size: 2048})
         let embed = new Discord.MessageEmbed()
         .setTitle('Avatar URL')
         .setImage(msg.author.displayAvatarURL({dynamic: true}))
@@ -34,17 +37,18 @@ module.exports = class OneThousandCommand extends commando.Command {
         .setColor('#275BF0')
         msg.channel.send(embed)
         }else{
-        let ruser = msg.mentions.users.first() || msg.author;
-            
-            var avatar = ruser.displayAvatarURL({dynamic: true, size: 256})
-            //var member= msg.member.mentions.first();
-            //const users = member.displayAvatarURL({size: 2048})
-            let embed = new Discord.MessageEmbed()
-            .setTitle('Avatar URL')
-            .setImage(ruser.displayAvatarURL({dynamic: true}))
-            .setURL(avatar)
-            .setColor('#275BF0')
-            msg.channel.send(embed)
+        let thanos = client.users.fetch(args[0]);
+
+        thanos.then(function(result1) {
+        let embed = new Discord.MessageEmbed()
+        .setTitle('Avatar URL')
+        .setImage(result1.displayAvatarURL({dynamic: true}))
+        .setURL(result1.avatarURL())
+        .setColor('#275BF0')
+        msg.channel.send(embed)
+    
+        });
+            //var avatar = ruser.displayAvatarURL({dynamic: true})
         }
     }
 }
