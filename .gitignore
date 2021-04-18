@@ -1,1 +1,5 @@
 node_modules/
+index.js
+token.json
+info.json
+QueueCommand.js
