@@ -38,7 +38,19 @@ module.exports = class EmojifyCommand extends commando.Command {
         msg.delete()
         for(var i = 0; i < text.length; i++)
       {
+        if (text[i].indexOf(' ') != -1){
+          
+          finalMessage.push(' ')
+
+        } else if (!Number.isNaN(text[i])) {
+
+          finalMessage.push(`:${text[i]}:`)
+
+        } else {
+
         finalMessage.push(`:regional_indicator_${text[i]}:`)
+        
+        }
       }
       await msg.channel.send(finalMessage.join(" "))
     }
