@@ -42,8 +42,6 @@ async run (msg, { text }) {
 
         }
 
-        console.log(finalsend)
-
         msg.channel.send(finalsend.join(" "))
 
         }
