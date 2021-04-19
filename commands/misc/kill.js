@@ -25,12 +25,12 @@ async run (msg) {
 
       const rMember = msg.mentions.users.first();
       
-      const trumpImage =[` pushed a cactus up ${rMember} nose`,` peeled ${rMember} fingernails off one by one`,  `spooned ${rMember} brain out and ate it`, `  poured bleach into ${rMember} eyeballs`, ` flipped ${rMember} head 180`,]
-      const image = trumpImage[Math.floor(Math.random() * trumpImage.length)];
+      const kills =[` pushed a cactus up ${rMember} nose`,` peeled ${rMember} fingernails off one by one`,  `spooned ${rMember} brain out and ate it`, `  poured bleach into ${rMember} eyeballs`, ` flipped ${rMember} head 180`,]
+      const kill = kills[Math.floor(Math.random() * kills.length)];
 
       const embed = new Discord.MessageEmbed()
       .setTitle('Kill machine.')
-      .setDescription(msg.author.username+image)
+      .setDescription(msg.author.username+kill)
 
       msg.channel.send(embed)
     }
