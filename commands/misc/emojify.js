@@ -1,8 +1,6 @@
-//broken, not high on priority
-
+//~~broken, not high on priority~~
+//fixed!
 const commando = require('discord.js-commando');
-const { Message } = require('discord.js');
-const fs = require('fs')
 
 module.exports = class EmojifyCommand extends commando.Command {
     constructor(client) {
