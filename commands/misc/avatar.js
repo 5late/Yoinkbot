@@ -6,7 +6,8 @@ const fs = require('fs')
 const prefix = '?'
 const path = require('path');
 const config = require(path.join(__dirname, '../../config', 'config.json'))
-const {Client} = require('discord.js')
+const {Client} = require('discord.js');
+const { startsWith } = require('cli-color/beep');
 const client = new Discord.Client();
 client.token = config.token;
 
@@ -24,6 +25,26 @@ module.exports = class AvatarCommand extends commando.Command {
         const args = msg.content.slice(prefix.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
         
+        function getIdFromMention(mention) {
+            if (!mention) return;
+    
+            if (mention.startsWith('<@') && mention.endsWith('>')) {
+                mention = mention.slice(2, -1);
+                
+                if (mention.startsWith('!')) {
+                    mention = mention.slice(1);
+                }
+        
+            }
+            mention = client.users.fetch(mention)
+            return mention;
+        }
+
+        function getUserFromID(id){
+            if(Number.isNaN(id)) return;
+
+            return client.users.fetch(id)
+        }
         
         if(!args.length){
         
@@ -38,18 +59,21 @@ module.exports = class AvatarCommand extends commando.Command {
 
         }else{
 
-        let thanos = client.users.fetch(args[0]);
+                    let thanos = getIdFromMention(args[0])
 
-        thanos.then(function(result1) {
+                    thanos.then(function(result1) {
+        
+                    let embed = new Discord.MessageEmbed()
+                    .setTitle('Avatar URL')
+                    .setImage(result1.displayAvatarURL({dynamic: true}))
+                    .setURL(result1.avatarURL())
+                    .setColor('#275BF0')
+        
+                    msg.channel.send(embed)
+                    
+                    });
+                    
 
-        let embed = new Discord.MessageEmbed()
-        .setTitle('Avatar URL')
-        .setImage(result1.displayAvatarURL({dynamic: true}))
-        .setURL(result1.avatarURL())
-        .setColor('#275BF0')
-
-        msg.channel.send(embed)
-        });
         }
     }
 }
