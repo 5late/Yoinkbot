@@ -4,7 +4,7 @@ const { DiscordAPIError } = require('discord.js');
 const Discord = require('discord.js');
 const { finished } = require('stream');
 const prefix  = '?'
-module.exports = class OneThousandCommand extends commando.Command {
+module.exports = class DootCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'doot',
@@ -36,26 +36,5 @@ for (i = 0; i < args.length; i++) {
 console.log(finalsend)
 msg.channel.send(finalsend.join(" "))
 }
-      
-        const id = msg.author.id
-        console.log(id)
-        const name = msg.member.user.tag;
-        console.log(name)
-        var information = [];
-        information.push(name, id)
-        var savedinfo = fs.readFileSync("./information.txt", {"encoding": "utf-8"});
-        
-      var newinfo = savedinfo;
-    fs.writeFileSync("information.txt", newinfo.toString())
-    
-    fs.appendFileSync("information.txt", information.toString())
-
-    fs.readFile("./information.txt", function (err, data) {
-        if (err) throw err;
-        var datata = data.toString('utf-8')
-        if(data.includes('Xurxx#7879')){
-         console.log((datata.length / 29) - .689655172413794)
-        }
-      });
-    }
+}
 }
