@@ -1,9 +1,6 @@
 const commando = require('discord.js-commando');
-const fs = require('fs');
-const { DiscordAPIError } = require('discord.js');
-const Discord = require('discord.js');
-const { finished } = require('stream');
 const prefix  = '?'
+
 module.exports = class DootCommand extends commando.Command {
     constructor(client) {
         super(client, {
@@ -20,21 +17,35 @@ module.exports = class DootCommand extends commando.Command {
           ]
         })
     }
-    async run (msg, { text }) {
+
+async run (msg, { text }) {
       const args = msg.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
-let finalsend = []
-if (args.length > 14){
-    msg.channel.send('too long')
-}else{
-    var i;
-    text.split(' ')
-for (i = 0; i < args.length; i++) {
-    finalsend.push(args[i])
-    finalsend.push('🎺 💀')
-}
-console.log(finalsend)
-msg.channel.send(finalsend.join(" "))
-}
-}
+
+    let finalsend = []
+
+    if (args.length > 14){
+
+        msg.channel.send('too long')
+
+    }else{
+
+        var i;
+
+        text.split(' ')
+
+        for (i = 0; i < args.length; i++) {
+
+            finalsend.push(args[i])
+
+            finalsend.push('🎺 💀')
+
+        }
+
+        console.log(finalsend)
+
+        msg.channel.send(finalsend.join(" "))
+
+        }
+    }
 }
