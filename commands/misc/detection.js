@@ -1,8 +1,6 @@
 const commando = require('discord.js-commando');
-const { DiscordAPIError } = require('discord.js');
 const Discord = require('discord.js');
-const client = new commando.CommandoClient;
-const fs = require('fs')
+
 module.exports = class IdiotCommand extends commando.Command {
     constructor(client) {
         super(client, {
