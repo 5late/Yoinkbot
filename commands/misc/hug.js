@@ -18,12 +18,11 @@ module.exports = class OneThousandCommand extends commando.Command {
             
         })
       }
-    async run (msg, { text }) {
+async run (msg, { text }) {
            
       const args = msg.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
-      const rMember = msg.mentions.users.first();
 
-       msg.channel.send(msg.author.username + ' gave ' + text + ' a huge bear hug! ❤️❤️🤗🤗')
+    msg.channel.send(msg.author.username + ' gave ' + text + ' a huge bear hug! <:happy:833721541429559326>')
     }
 }
