@@ -3,13 +3,13 @@ const { DiscordAPIError } = require('discord.js');
 const Discord = require('discord.js');
 const client = new commando.CommandoClient;
 const fs = require('fs')
-module.exports = class RetardCommand extends commando.Command {
+module.exports = class IdiotCommand extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'retard',
+            name: 'idiot',
             group: 'misc',
-            memberName: 'retard',
-            description: 'Are you a retard? Returns answer Yes or No.',
+            memberName: 'idiot',
+            description: 'Are you a idiot? Returns answer Yes or No.',
         })
     }
 
@@ -22,15 +22,15 @@ module.exports = class RetardCommand extends commando.Command {
         console.log(name)
         const user = msg.author.toString();
         
-        const retard = ['Yes', 'Yes', 'No']
+        const idiot = ['Yes', 'Yes', 'No']
         
-        const retardcheck = retard[Math.floor(Math.random() * retard.length)];
+        const idiotcheck = idiot[Math.floor(Math.random() * idiot.length)];
 
-        if(retardcheck === 'Yes') {
+        if(idiotcheck === 'Yes') {
             const embeded = new Discord.MessageEmbed()
             .setColor('#00AE20')
-            .setTitle('Retard check machine')
-            .setDescription(user + ' the answer is ' + retardcheck)
+            .setTitle('Idiot check machine')
+            .setDescription(user + ' the answer is ' + idiotcheck)
             .setImage('https://i.kym-cdn.com/photos/images/original/001/717/932/551.png')
             .setFooter("Yoinkbot collects your username and tag to improve our services. To find out what's being collected, contact the bot owner with the command '?owner")
             msg.channel.send(embeded)
@@ -38,8 +38,8 @@ module.exports = class RetardCommand extends commando.Command {
         else{
             const newembed = new Discord.MessageEmbed()
             .setColor('#FF0000')
-            .setTitle('Retard Check machine')
-            .setDescription(user + ' the answer is ' + retardcheck)
+            .setTitle('Idiot Check machine')
+            .setDescription(user + ' the answer is ' + idiotcheck)
             .setImage('https://i.kym-cdn.com/photos/images/facebook/001/483/348/bdd.jpg')
             .setFooter("Yoinkbot collects your usernames and tag to improve our services. To find out what's being collected, contact the bot owner with the command '?owner")
             msg.channel.send(newembed)
