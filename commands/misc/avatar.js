@@ -40,12 +40,6 @@ module.exports = class AvatarCommand extends commando.Command {
             return mention;
         }
 
-        function getUserFromID(id){
-            if(Number.isNaN(id)) return;
-
-            return client.users.fetch(id)
-        }
-        
         if(!args.length){
         
         let ruser = msg.author;
@@ -59,19 +53,19 @@ module.exports = class AvatarCommand extends commando.Command {
 
         }else{
 
-                    let thanos = getIdFromMention(args[0])
+            let thanos = getIdFromMention(args[0])
 
-                    thanos.then(function(result1) {
+            thanos.then(function(result1) {
         
-                    let embed = new Discord.MessageEmbed()
-                    .setTitle('Avatar URL')
-                    .setImage(result1.displayAvatarURL({dynamic: true}))
-                    .setURL(result1.avatarURL())
-                    .setColor('#275BF0')
+            let embed = new Discord.MessageEmbed()
+            .setTitle('Avatar URL')
+            .setImage(result1.displayAvatarURL({dynamic: true}))
+            .setURL(result1.avatarURL())
+            .setColor('#275BF0')
         
-                    msg.channel.send(embed)
+            msg.channel.send(embed)
                     
-                    });
+            });
                     
 
         }
