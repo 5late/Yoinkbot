@@ -10,7 +10,7 @@ module.exports = class JokeCommand extends commando.Command {
             description: 'Sends a dad joke',
         })
     }
-    async run (msg) {
+async run (msg) {
         let getJoke = async () => {
             let response = await axios.get(
                 "https://official-joke-api.appspot.com/random_joke"
