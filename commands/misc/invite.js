@@ -1,10 +1,8 @@
 const commando = require('discord.js-commando');
-const fs = require('fs');
 const Discord = require('discord.js')
-const { DiscordAPIError } = require('discord.js');
 
 
-module.exports = class OneThousandCommand extends commando.Command {
+module.exports = class InviteCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'invite',
