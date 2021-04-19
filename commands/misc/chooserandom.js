@@ -16,9 +16,10 @@ module.exports = class ChooseCommand extends commando.Command {
                   prompt: 'What would you like me to randomly choose?',
                   type: 'string',
               }
-          ]
-        })
-    }
+            ]
+          }
+        )
+      }
     async run (msg, { text }) {
       const args = msg.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
