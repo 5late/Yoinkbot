@@ -1,13 +1,8 @@
 const commando = require('discord.js-commando');
-const { DiscordAPIError } = require('discord.js');
-const fetch = require('node-fetch')
 const Discord = require('discord.js')
-const fs = require('fs')
 const prefix = '?'
 const path = require('path');
 const config = require(path.join(__dirname, '../../config', 'config.json'))
-const {Client} = require('discord.js');
-const { startsWith } = require('cli-color/beep');
 const client = new Discord.Client();
 client.token = config.token;
 
