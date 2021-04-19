@@ -7,7 +7,6 @@ const client = new commando.CommandoClient({
     unknownCommandResponse: false
 });
 
-
 client.login(config.token);
 client.registry.registerGroups([
 	['mod', 'mod commands'],
@@ -29,6 +28,7 @@ client.once('ready', () => {
 	console.log('\n')
 	console.log(client.guilds.cache.map(v=>v.name).join('\n'));
 });
+
 client.on('message', async message => {
 
 if(message.author.id === config.ownerId && message.content.startsWith('!status')){
