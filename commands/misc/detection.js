@@ -15,11 +15,6 @@ module.exports = class IdiotCommand extends commando.Command {
 
     
     async run (msg) {
-
-        const id = msg.author.id
-        console.log(id)
-        const name = msg.member.user.tag;
-        console.log(name)
         const user = msg.author.toString();
         
         const idiot = ['Yes', 'Yes', 'No']
