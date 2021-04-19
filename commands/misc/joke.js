@@ -1,10 +1,5 @@
 const commando = require('discord.js-commando');
-const { DiscordAPIError } = require('discord.js');
-const fetch = require('node-fetch')
-const Discord = require('discord.js')
-const fs = require('fs')
 const axios = require('axios')
-const prefix = '?'
 
 module.exports = class JokeCommand extends commando.Command {
     constructor(client) {
