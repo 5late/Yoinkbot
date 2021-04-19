@@ -23,6 +23,6 @@ async run (msg, { text }) {
       const args = msg.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
 
-    msg.channel.send(msg.author.username + ' gave ' + text + ' a huge bear hug! <:happy:833721541429559326>')
+    msg.channel.send(msg.author.username + ' gave ' + text + ' a huge bear hug! <:happy:816424699906752562>')
     }
 }
