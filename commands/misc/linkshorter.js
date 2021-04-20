@@ -14,8 +14,8 @@ module.exports = class LinkShortenCommand extends commando.Command {
             ]
         })
     }
-    
-async run (msg, { text }) {
+
+async run (msg) {
       const args = msg.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
     
