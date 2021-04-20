@@ -11,11 +11,11 @@ client.login(config.token);
 client.registry.registerGroups([
 	['mod', 'mod commands'],
 	['misc', 'misc commands'],
-	['music', 'music bot commands'],
+	['music', 'music commands'],
 	['dev_tools', 'developer tools'],
 	['reddit', 'reddit commands'],
-	['csgo', 'CSGO Case commands'],
-	['apis', 'API-related commands'],
+	['csgo', 'CSGO Case Opening commands'],
+	['apis', 'API fetched commands'],
     ['image_manipulation','Manipulate images!!']
 ]).registerDefaults()
 .registerCommandsIn(path.join(__dirname, 'commands'));
