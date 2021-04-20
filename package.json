@@ -4,7 +4,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "canvas": "^2.6.1",
+    "canvas": "*",
     "commando": "0.0.2",
     "database": "0.0.2",
     "discord.js": "^12.3.1",

@@ -38,13 +38,13 @@ CFLAGS_CC_Debug := \
 	-std=gnu++1y
 
 INCS_Debug := \
-	-I/home/blackbox2/.cache/node-gyp/15.6.0/include/node \
-	-I/home/blackbox2/.cache/node-gyp/15.6.0/src \
-	-I/home/blackbox2/.cache/node-gyp/15.6.0/deps/openssl/config \
-	-I/home/blackbox2/.cache/node-gyp/15.6.0/deps/openssl/openssl/include \
-	-I/home/blackbox2/.cache/node-gyp/15.6.0/deps/uv/include \
-	-I/home/blackbox2/.cache/node-gyp/15.6.0/deps/zlib \
-	-I/home/blackbox2/.cache/node-gyp/15.6.0/deps/v8/include
+	-I/home/blackbox2/.cache/node-gyp/15.12.0/include/node \
+	-I/home/blackbox2/.cache/node-gyp/15.12.0/src \
+	-I/home/blackbox2/.cache/node-gyp/15.12.0/deps/openssl/config \
+	-I/home/blackbox2/.cache/node-gyp/15.12.0/deps/openssl/openssl/include \
+	-I/home/blackbox2/.cache/node-gyp/15.12.0/deps/uv/include \
+	-I/home/blackbox2/.cache/node-gyp/15.12.0/deps/zlib \
+	-I/home/blackbox2/.cache/node-gyp/15.12.0/deps/v8/include
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=binding' \
@@ -79,13 +79,13 @@ CFLAGS_CC_Release := \
 	-std=gnu++1y
 
 INCS_Release := \
-	-I/home/blackbox2/.cache/node-gyp/15.6.0/include/node \
-	-I/home/blackbox2/.cache/node-gyp/15.6.0/src \
-	-I/home/blackbox2/.cache/node-gyp/15.6.0/deps/openssl/config \
-	-I/home/blackbox2/.cache/node-gyp/15.6.0/deps/openssl/openssl/include \
-	-I/home/blackbox2/.cache/node-gyp/15.6.0/deps/uv/include \
-	-I/home/blackbox2/.cache/node-gyp/15.6.0/deps/zlib \
-	-I/home/blackbox2/.cache/node-gyp/15.6.0/deps/v8/include
+	-I/home/blackbox2/.cache/node-gyp/15.12.0/include/node \
+	-I/home/blackbox2/.cache/node-gyp/15.12.0/src \
+	-I/home/blackbox2/.cache/node-gyp/15.12.0/deps/openssl/config \
+	-I/home/blackbox2/.cache/node-gyp/15.12.0/deps/openssl/openssl/include \
+	-I/home/blackbox2/.cache/node-gyp/15.12.0/deps/uv/include \
+	-I/home/blackbox2/.cache/node-gyp/15.12.0/deps/zlib \
+	-I/home/blackbox2/.cache/node-gyp/15.12.0/deps/v8/include
 
 OBJS := \
 	$(obj).target/$(TARGET)/src/binding.o
