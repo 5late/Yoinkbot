@@ -21,8 +21,7 @@ async run (msg) {
     
       TinyURL.shorten(args.toString(), function(res, err) {
         if (err)
-          console.log(err)
-          console.log(res);
+          console.log(err);
           msg.channel.send(res)
       });
     }
