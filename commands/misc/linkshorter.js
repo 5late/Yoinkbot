@@ -1,7 +1,4 @@
 const commando = require('discord.js-commando');
-const fs = require('fs');
-const { DiscordAPIError } = require('discord.js');
-const Discord = require('discord.js')
 const prefix  = '?'
 const TinyURL = require('tinyurl');
 
@@ -12,8 +9,12 @@ module.exports = class LinkShortenCommand extends commando.Command {
             group: 'misc',
             memberName: 'shorten',
             description: 'Shorten a link. Works like bit.ly',
+            aliases: [
+              'linkshorten', 'ls'
+            ]
         })
     }
+    
 async run (msg, { text }) {
       const args = msg.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
