@@ -1,2 +1,5 @@
-console.log("This file executed!")
-console.log("This is another string!")
+const Discord = require('discord.js')
+const client = new Discord.Client()
+
+client.login(DISCORD_TOKEN)
+console.log("logged in!")
