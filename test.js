@@ -9,7 +9,7 @@ const path5 = './commands'
 for (var i = 1; i<5; i++){
     try{
         if(fs.existsSync(path1 && path2 && path3 && path4 && path5)){
-            console.log(`${path[i]} exists.`)
+            console.log(`The files all exist.`)
         }
     } catch (err) {
         console.log(err)
