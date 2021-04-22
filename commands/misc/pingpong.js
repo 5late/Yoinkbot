@@ -1,5 +1,4 @@
 const commando = require('discord.js-commando');
-const { DiscordAPIError } = require('discord.js');
 const Discord = require('discord.js')
 
 module.exports = class PingPongCommand extends commando.Command {
@@ -11,7 +10,8 @@ module.exports = class PingPongCommand extends commando.Command {
             description: 'Pongs!',
         })
     }
-    async run (msg) {
+
+async run (msg) {
         msg.channel.send('------------------>')
         await msg.channel.send('<------------------')
         const embed = new Discord.MessageEmbed()
