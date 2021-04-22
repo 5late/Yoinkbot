@@ -7,7 +7,7 @@ const client = new commando.CommandoClient({
     unknownCommandResponse: false
 });
 
-client.login(config.token);
+client.login(config.token || DISCORD_TOKEN);
 client.registry.registerGroups([
 	['mod', 'mod commands'],
 	['misc', 'misc commands'],
@@ -71,5 +71,5 @@ if (target.id === message.author.id) {
 }
 });
 
-client.login(config.token);
+client.login(config.token || DISCORD_TOKEN);
 })

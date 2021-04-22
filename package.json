@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "node test.js"
+    "test": "node index.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
