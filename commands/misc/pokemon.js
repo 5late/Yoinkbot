@@ -86,27 +86,6 @@ module.exports = class RouletteCommand extends commando.Command {
             break
         }
         }
-
-        const ID = msg.author.id
-        console.log(ID)
-        const username = msg.member.user.tag;
-        console.log(username)
-        var information = [];
-        information.push(username, ID)
-        var savedinfo = fs.readFileSync("./information.txt", {"encoding": "utf-8"});
-        
-      var newinfo = savedinfo;
-    fs.writeFileSync("information.txt", newinfo.toString())
-    
-    fs.appendFileSync("information.txt", information.toString())
-
-    fs.readFile("./information.txt", function (err, data) {
-        if (err) throw err;
-        var datata = data.toString('utf-8')
-        if(data.includes('Xurxx#7879')){
-         console.log((datata.length / 29) - .689655172413794)
-        }
-      });
     }
     catch (err) {
         console.log(err);
