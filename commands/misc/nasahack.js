@@ -1,7 +1,6 @@
 const commando = require('discord.js-commando');
-const fs = require('fs')
 
-module.exports = class OneThousandCommand extends commando.Command {
+module.exports = class NasaHackCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'hacknasa',
@@ -10,6 +9,7 @@ module.exports = class OneThousandCommand extends commando.Command {
             description: 'Hacks Nasa.',
         })
     }
+
 async run (msg) {     
         msg.reply('Entering the system...')
         await new Promise(r => setTimeout(r, 1500));
