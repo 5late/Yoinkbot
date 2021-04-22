@@ -8,7 +8,7 @@ const path5 = './commands'
 
 for (var i = 1; i<5; i++){
     try{
-        if(fs.existsSync(path[i])){
+        if(fs.existsSync(`${path[i]}`)){
             console.log(`${path[i]} exists.`)
         }
     } catch (err) {
