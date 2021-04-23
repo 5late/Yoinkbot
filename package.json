@@ -6,13 +6,14 @@
   "scripts": {
     "test": "node test.js",
     "start": "node .",
-    "lint" : "eslint ."
+    "lint": "eslint ."
   },
   "dependencies": {
     "axios": "^0.21.1",
     "canvas": "*",
     "discord.js": "^12.5.3",
     "discord.js-commando": "github:discordjs/Commando",
+    "eslint": "*",
     "ffmpeg-static": "^4.2.6",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
