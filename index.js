@@ -58,9 +58,6 @@ const fetchedLogs = await message.guild.fetchAuditLogs({
 
 const deletionLog = fetchedLogs.entries.first();
 
-
-if (!deletionLog) return console.log(`A message by ${message.author.tag} was deleted, but no relevant audit logs were found.`);
-
 const { executor, target } = deletionLog;
 
 if (target.id === message.author.id) {

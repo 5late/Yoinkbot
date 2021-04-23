@@ -22,10 +22,14 @@ module.exports = class QuoteCommand extends commando.Command {
 async run (msg, { text }) {   
         const args = msg.content.slice(prefix.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
-        let rMember = msg.guild.member(msg.mentions.users.first())// || msg.guild.members.cache.get(args[0]))
+        let rMember = msg.guild.member(msg.mentions.users.first())
 
-        let finalMessages = await text.replace(args[0], '')
+        if(args.length > 1){
+            let finalMessages = await text.replace(args[0], '')
 
-        await msg.channel.send(finalMessages + `\n-${rMember}, ${new Date().getFullYear()}`)
+            await msg.channel.send(finalMessages + `\n-${rMember}, ${new Date().getFullYear()}`)
+        } else {
+            console.log(rMember.lastMessage.content)
+        }
     }
 }
