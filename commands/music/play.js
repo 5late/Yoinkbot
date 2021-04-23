@@ -93,32 +93,5 @@ module.exports = class QueueCommand extends commando.Command {
     });
     }
 }
-        
-            
-            //dispatcher.on('finish', () => voiceChannel.leave());            
-        
-                       
-
-
-    /*async playSong(connection, msg) {
-        const stream = ytdl(musicQueue[0], { filter: 'audioonly'});
-        console.log(musicQueue[0])
-        const dispatcher = connection.playStream(stream, streamOptions);
-        dispatcher.on('start', () => {
-            msg.channel.send("Playing song...");
-        });
-        
-        dispatcher.on('end', () => {
-            console.log("Finished song.");
-            musicQueue.shift();
-            if(musicQueue.length === 0) {
-                console.log("No more songs to be played...");
-            }
-            else {
-                setTimeout(() => {
-                    this.playSong(connection, msg);
-                }, 500)
-            }
-        })*/
     }
 }

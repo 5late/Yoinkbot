@@ -3,9 +3,10 @@ const path = require('path');
 const config = require(path.join(__dirname, 'config', 'config.json'))
 const client = new commando.CommandoClient({
 	owner: config.ownerId,
-    commandPrefix: config.prefix,
+    prefix: config.prefix,
     unknownCommandResponse: false
 });
+const ytdl = require('ytdl-core')
 
 client.login(config.token || DISCORD_TOKEN);
 client.registry.registerGroups([
@@ -66,7 +67,7 @@ if (target.id === message.author.id) {
 }	else {
 	console.log(`A message by ${message.author.tag} was deleted, but we don't know by who.`);
 }
-});
 
-client.login(config.token || DISCORD_TOKEN);
 })
+client.login(config.token || DISCORD_TOKEN);
+});
