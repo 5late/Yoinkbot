@@ -4,9 +4,9 @@ const Discord = require('discord.js')
 module.exports = class OneThousandCommand extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'd-redditinfo',
+            name: 'redditinfo',
             group: 'dev_tools',
-            memberName: 'd-redditinfo',
+            memberName: 'redditinfo',
             description: 'Provides information about the Reddit post services.',
         })
     }
@@ -18,7 +18,6 @@ module.exports = class OneThousandCommand extends commando.Command {
         .setDescription('Below find a list of the subreddit officially supported by Yoinkbot.')
         .addFields({name:'r/dankmemes', value: 'Use command ?meme'})
         .addFields({name:'r/programminghumour',value: 'Use command ?phumour'})
-        .addFields({name:'r/copypasta', value: 'Use command ?copypasta'})
         .addFields({name:'r/food', value: 'Use command ?food'})
         .addFields({name:'r/tifu', value: 'Use command ?tifu'})
         .addFields({name:'r/PCM', value: 'Use command ?pcm'})

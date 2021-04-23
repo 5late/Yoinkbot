@@ -1,19 +1,21 @@
 const commando = require('discord.js-commando');
-const fs = require('fs')
-const client = new commando.CommandoClient;
 const Discord = require('discord.js')
 const prefix = '?'
 
 module.exports = class ServerInfoCommand extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'd-serverinfo',
+            name: 'serverinfo',
             group: 'dev_tools',
-            memberName: 'd-serverinfo',
+            memberName: 'serverinfo',
             description: 'Gives info about the server.',
+            aliases: [
+                'sinfo'
+            ]
         })
     }
-    async run (msg) {
+
+async run (msg) {
             const args = msg.content.slice(prefix.length).trim().split(/ +/g);
             const command = args.shift().toLowerCase();
             const ruser = msg.mentions.users.first() || msg.author;

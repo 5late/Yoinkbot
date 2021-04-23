@@ -7,9 +7,9 @@ const prefix = '?'
 module.exports = class InfoCommand extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'd-info',
+            name: 'info',
             group: 'dev_tools',
-            memberName: 'd-info',
+            memberName: 'info',
             description: 'Gives info about a user.',
         })
     }

@@ -6,10 +6,10 @@ const Discord = require('discord.js')
 module.exports = class RoleCommand extends commando.Command {
     constructor(client) {
         super(client, {
-            name: 'd-roles',
+            name: 'roles',
             group: 'dev_tools',
-            memberName: 'd-roles',
-            description: 'Find roles.',
+            memberName: 'roles',
+            description: 'Find users with a role.',
         })
     }
 
