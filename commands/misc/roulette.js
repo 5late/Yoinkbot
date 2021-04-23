@@ -1,9 +1,5 @@
 const commando = require('discord.js-commando');
-const fs = require('fs');
-const { DiscordAPIError } = require('discord.js');
 const Discord = require('discord.js')
-const { Client } = require('discord.js');
-const client = new commando.CommandoClient();
 
 module.exports = class RouletteCommand extends commando.Command {
     constructor(client) {
@@ -22,15 +18,15 @@ module.exports = class RouletteCommand extends commando.Command {
             
         })
       }
-    async run (msg, { text }) {
-      let people = await msg.guild.members.fetch().toString();
-      let winner = msg.guild.members.cache.random()
-      let winnertag = winner.user.id
-      let testing = people[Math.floor(Math.random() * people.length)]
-      console.log(testing)
-      let winnerpfp = winner.user.displayAvatarURL()
-      console.log(winner)
+
+async run (msg, { text }) {
+    
+        let winner = msg.guild.members.cache.random()
+        let winnertag = winner.user.id
+        let winnerpfp = winner.user.displayAvatarURL()
+
         
+
       const embed = new Discord.MessageEmbed()
       .setAuthor(`${msg.author.username}`, msg.author.displayAvatarURL())
       .setTitle(`${text}:`)
