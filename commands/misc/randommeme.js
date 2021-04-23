@@ -1,12 +1,9 @@
 const commando = require('discord.js-commando');
-const client = new commando.CommandoClient()
 const Discord = require('discord.js')
 const fs = require('fs')
-const axios = require('axios')
 const prefix = '?'
-const request = require('request')
 
-module.exports = class JokeCommand extends commando.Command {
+module.exports = class RandomMemeCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'random',
