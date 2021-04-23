@@ -45,7 +45,7 @@ client.on('messageDelete', async message => {
 client.user.setPresence({
 	status: 'online',
 	activity: {
-		name: 'your mom',
+		name: `${config.prefix}help , currently in ${client.guilds.cache.size} servers`,
 		type: 'LISTENING'
 	}
 })

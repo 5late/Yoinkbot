@@ -2,6 +2,7 @@ const commando = require('discord.js-commando');
 const Discord = require('discord.js')
 const prefix = '?'
 const ms = require('ms')
+const client = new Discord.Client()
 
 module.exports = class BotInfoCommand extends commando.Command {
     constructor(client) {
@@ -19,15 +20,19 @@ module.exports = class BotInfoCommand extends commando.Command {
     
     const serversIn = 9
     const totalUsers = 158
+    let serverlist = ''
+    client.guilds.cache.forEach((guild) => {
+        serverlist = serverlist.concat(" - " + guild.name + ": ID: " + guild.id + "\n")
+    })
     
     const serverIcon = 'https://cdn.discordapp.com/embed/avatars/1.png'
     
     let uptime = ms(this.client.uptime, { long: true });
-    const timesUsed = "~8000"
-    
+    const timesUsed = "~8000"    
 
     const embed = new Discord.MessageEmbed()
     .setTitle('Global Info for Yoinkbot#1691')
+    .setDescription(`# of Servers:`)
     .setColor('RANDOM')
     .setThumbnail(serverIcon)
     .addFields({name: 'Bot Owner: ', value: 'Xurxx#7879'})
