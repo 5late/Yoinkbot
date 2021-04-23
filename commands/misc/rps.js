@@ -1,7 +1,5 @@
 const commando = require('discord.js-commando');
-const { DiscordAPIError } = require('discord.js');
 const Discord = require('discord.js');
-const client = new Discord.Client();
 const prefix = '?';
 const fs = require('fs')
 
