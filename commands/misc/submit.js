@@ -1,8 +1,5 @@
 const commando = require('discord.js-commando');
-const client = new commando.CommandoClient()
-const Discord = require('discord.js')
 const fs = require('fs')
-const axios = require('axios')
 const prefix = '?'
 const request = require('request')
 
@@ -115,7 +112,6 @@ module.exports = class SubmitCommand extends commando.Command {
         }
         const args = msg.content.slice(prefix.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
-        //const igUsername = args[0].toLowerCase();
         
        
         let Attachment = (msg.attachments).array();
@@ -150,28 +146,5 @@ module.exports = class SubmitCommand extends commando.Command {
             msg.channel.send(`Thank you for submitting your meme to the general Yoinkbot meme pool.`)
             
         })
-
-
-
-        const id = msg.author.id
-        console.log(id)
-        const name = msg.member.user.tag;
-        console.log(name)
-        var information = [];
-        information.push(name, id)
-        var savedinfo = fs.readFileSync("./information.txt", {"encoding": "utf-8"});
-
-      var newinfo = savedinfo;
-    fs.writeFileSync("information.txt", newinfo.toString())
-    
-    fs.appendFileSync("information.txt", information.toString())
-
-    fs.readFile("./information.txt", function (err, data) {
-        if (err) throw err;
-        var datata = data.toString('utf-8')
-        if(data.includes('Xurxx#7879')){
-         console.log((datata.length / 29) - .689655172413794)
-        }
-      });
     }
 }
