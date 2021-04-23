@@ -6,7 +6,6 @@ const client = new commando.CommandoClient({
     prefix: config.prefix,
     unknownCommandResponse: false
 });
-const ytdl = require('ytdl-core')
 
 client.login(config.token || DISCORD_TOKEN);
 client.registry.registerGroups([
