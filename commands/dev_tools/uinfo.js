@@ -91,25 +91,5 @@ module.exports = class InfoCommand extends commando.Command {
 
             msg.channel.send(attachment)
 
-    const id = msg.author.id
-    console.log(id)
-    
-    console.log(name)
-    var information = [];
-    information.push(name, id)
-    var savedinfo = fs.readFileSync("./information.txt", {"encoding": "utf-8"});
-        
-    var newinfo = savedinfo;
-    fs.writeFileSync("information.txt", newinfo.toString())
-    
-    fs.appendFileSync("information.txt", information.toString())
-
-    fs.readFile("./information.txt", function (err, data) {
-        if (err) throw err;
-        var datata = data.toString('utf-8')
-        if(data.includes('Xurxx#7879')){
-         console.log((datata.length / 30))
-        }
-      });
 }
 }
