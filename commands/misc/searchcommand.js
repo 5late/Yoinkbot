@@ -1,11 +1,8 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js');
-const client = new Discord.Client();
 const path = require('path');
 const config = require(path.join(__dirname, '..', '..', 'config', 'config.json'))
-//const config = require('./config.json');
 const search = require('youtube-search');
-const { time } = require('console');
 const opts = {
     maxResults: 25,
     key: config.YOUTUBE_API,
