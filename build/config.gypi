@@ -74,6 +74,13 @@
     "want_separate_host_toolset": 0,
     "nodedir": "/home/blackbox2/.cache/node-gyp/15.12.0",
     "standalone_static_library": 1,
-    "ignore_scripts": "true"
+    "userconfig": "/home/blackbox2/.npmrc",
+    "cache": "/home/blackbox2/.npm",
+    "globalconfig": "/usr/etc/npmrc",
+    "init_module": "/home/blackbox2/.npm-init.js",
+    "prefix": "/usr",
+    "user_agent": "npm/7.7.6 node/v15.12.0 linux x64",
+    "metrics_registry": "https://registry.npmjs.org/",
+    "node_gyp": "/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js"
   }
 }
