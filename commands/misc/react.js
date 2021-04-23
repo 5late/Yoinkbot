@@ -1,8 +1,6 @@
 const commando = require('discord.js-commando');
-const fs = require('fs');
-const { DiscordAPIError } = require('discord.js');
-const Discord = require('discord.js')
 const prefix  = '?'
+
 module.exports = class OneThousandCommand extends commando.Command {
     constructor(client) {
         super(client, {
@@ -19,17 +17,20 @@ module.exports = class OneThousandCommand extends commando.Command {
           ]
         })
     }
-    async run (msg, { text }) {
+async run (msg, { text }) {
         const society = '769377185734590494'
     
       const args = msg.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
-     msg.delete()
-     //msg.react(args[0])
+     
+      msg.delete()
+
      const amount = (parseInt(0)) + 1;
-if (args[0] === 'society'){
-    args[0] = society
-}
+
+     if (args[0] === 'society'){
+        args[0] = society
+    }
+
      msg.channel.messages.fetch({
          limit: amount,
      }).then((messages) => {
