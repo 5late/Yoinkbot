@@ -1,9 +1,6 @@
 const commando = require('discord.js-commando');
-const fs = require('fs');
-const { DiscordAPIError } = require('discord.js');
-const Discord = require('discord.js');
-const { finished } = require('stream');
 const prefix  = '?'
+
 module.exports = class VaporCommand extends commando.Command {
     constructor(client) {
         super(client, {
