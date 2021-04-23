@@ -22,7 +22,7 @@ module.exports = class VaporCommand extends commando.Command {
       const args = msg.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
 
-        finalSend.push(text)
+        finalSend.push(text.toUpperCase())
       msg.channel.send(finalSend.join(' '))
     }
 }
