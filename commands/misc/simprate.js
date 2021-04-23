@@ -20,12 +20,12 @@ module.exports = class SimprateCommand extends commando.Command {
         const args = msg.content.slice(prefix.length).trim().split(/ +/g);
         let rMember = msg.guild.member(msg.mentions.users.first() || msg.guild.members.cache.get(args[0])) // Takes the user mentioned, or the ID of a user
         
-        
+        if(!args.length) return msg.channel.send(`You havent given me someone to simprate!`)
         const newembed = new Discord.MessageEmbed()
             .setColor('#00FFCC')
             .setTitle('Simprating machine')
             .addField("Result:", `${rMember}` + ' you are ' + simprate + '% simp')
             .setFooter(`Yoinkbot`)            
-            msg.channel.send(newembed)
+        msg.channel.send(newembed)
     }
 }
