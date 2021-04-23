@@ -23,7 +23,7 @@ module.exports = class OneThousandCommand extends commando.Command {
       const args = msg.content.slice(prefix.length).trim().split(/ +/g);
       const command = args.shift().toLowerCase();
         
-      let uwuaters = ["h", "c"]
+      let uwuaters = ["h", "r"]
 
       if(text.length > 91) {
         msg.channel.send('Keep it under 91 characters!')
@@ -31,6 +31,7 @@ module.exports = class OneThousandCommand extends commando.Command {
       else{
 
         msg.delete()
+        finalMessage.push('uwu ')
         for(var i = 0; i < text.length; i++)
 
       {
@@ -50,7 +51,8 @@ module.exports = class OneThousandCommand extends commando.Command {
         }
 
       }
-      await msg.channel.send(finalMessage.join(" "))
+      await finalMessage.push(` uwu`)
+      await msg.channel.send(finalMessage.join(""))
     }
   }
 }
