@@ -1,13 +1,12 @@
 const commando = require('discord.js-commando');
-const fs = require('fs')
 
-module.exports = class OneThousandCommand extends commando.Command {
+module.exports = class SayCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'say',
             group: 'misc',
             memberName: 'say',
-            description: 'Say something after me',
+            description: 'Repeats arguments.',
             args:[
                 { 
                     key:'text',
