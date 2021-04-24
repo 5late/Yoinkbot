@@ -1,7 +1,7 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js')
 const path = require('path');
-const config = require(path.join(__dirname, 'config', 'config.json'))
+const config = require(path.join(__dirname, '../../config', 'config.json'))
 const prefix = config.prefix
 
 module.exports = class KillCommand extends commando.Command {
