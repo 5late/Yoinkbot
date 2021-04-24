@@ -1,5 +1,7 @@
 const commando = require('discord.js-commando');
-const fs = require('fs')
+const path = require('path');
+const config = require(path.join(__dirname, '../../config', 'config.json'))
+const prefix = config.prefix
 
 module.exports = class OneThousandCommand extends commando.Command {
     constructor(client) {

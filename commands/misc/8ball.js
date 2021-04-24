@@ -1,8 +1,9 @@
 const commando = require('discord.js-commando');
-const fs = require('fs');
-const { DiscordAPIError } = require('discord.js');
 const Discord = require('discord.js')
-const prefix  = '?'
+const path = require('path');
+const config = require(path.join(__dirname, '../../config', 'config.json'))
+const prefix  = config.prefix
+
 module.exports = class EightBallCommand extends commando.Command {
     constructor(client) {
         super(client, {
@@ -31,7 +32,7 @@ console.log(args)
       .setTitle(`${text}:`)
       .setAuthor(msg.author.username, msg.author.displayAvatarURL())
       .setDescription(answer)
-      .setFooter(`Yoinkbot`, `https://cdn.discordapp.com/embed/avatars/1.png`)
+      .setFooter(`Yoinkbot`, `${config.yoinkbotPFP}`)
 
       msg.channel.send(embed)
 }

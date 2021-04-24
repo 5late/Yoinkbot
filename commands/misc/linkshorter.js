@@ -1,5 +1,6 @@
 const commando = require('discord.js-commando');
-const prefix  = '?'
+const config = require(path.join(__dirname, '../../config', 'config.json'))
+const prefix = config.prefix
 const TinyURL = require('tinyurl');
 
 module.exports = class LinkShortenCommand extends commando.Command {

@@ -1,7 +1,8 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js')
-const prefix = '?'
 const path = require('path');
+const config = require(path.join(__dirname, '../../config', 'config.json'))
+const prefix = config.prefix
 
 module.exports = class OneThousandCommand extends commando.Command {
     constructor(client) {
@@ -44,8 +45,8 @@ if(!args.length){
     const embed = new Discord.MessageEmbed()
       .setTitle('Compliment machine.')
       .setDescription(`<@${person}> ${compliment}`)
-
-      msg.channel.send(embed)
+      .setFooter(`Yoinkbot`, config.yoinkbotPFP)
+    msg.channel.send(embed)
 }
 }
 }

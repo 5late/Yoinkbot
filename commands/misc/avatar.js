@@ -1,10 +1,10 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js')
-const prefix = '?'
 const path = require('path');
 const config = require(path.join(__dirname, '../../config', 'config.json'))
 const client = new Discord.Client();
 client.token = config.token;
+const prefix = config.prefix
 
 module.exports = class AvatarCommand extends commando.Command {
     constructor(client) {
@@ -44,6 +44,7 @@ module.exports = class AvatarCommand extends commando.Command {
         .setImage(msg.author.displayAvatarURL({dynamic: true}))
         .setURL(avatar)
         .setColor('#275BF0')
+        .setFooter(`Yoinkbot`, config.yoinkbotPFP)
         msg.channel.send(embed)
 
         }else{
@@ -57,6 +58,7 @@ module.exports = class AvatarCommand extends commando.Command {
             .setImage(result1.displayAvatarURL({dynamic: true}))
             .setURL(result1.avatarURL())
             .setColor('#275BF0')
+            .setFooter(`Yoinkbot`, config.yoinkbotPFP)
         
             msg.channel.send(embed)
                     

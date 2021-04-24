@@ -1,5 +1,7 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js');
+const path = require('path');
+const config = require(path.join(__dirname, '../../config', 'config.json'))
 
 module.exports = class IdiotCommand extends commando.Command {
     constructor(client) {
@@ -25,7 +27,7 @@ module.exports = class IdiotCommand extends commando.Command {
             .setTitle('Idiot check machine')
             .setDescription(user + ' the answer is ' + idiotcheck)
             .setImage('https://i.kym-cdn.com/photos/images/original/001/717/932/551.png')
-            .setFooter("Yoinkbot collects your username and tag to improve our services. To find out what's being collected, contact the bot owner with the command '?owner")
+            .setFooter(`Yoinkbot`, config.yoinkbotPFP)
             msg.channel.send(embeded)
         }
         else{
@@ -34,7 +36,7 @@ module.exports = class IdiotCommand extends commando.Command {
             .setTitle('Idiot Check machine')
             .setDescription(user + ' the answer is ' + idiotcheck)
             .setImage('https://i.kym-cdn.com/photos/images/facebook/001/483/348/bdd.jpg')
-            .setFooter("Yoinkbot collects your usernames and tag to improve our services. To find out what's being collected, contact the bot owner with the command '?owner")
+            .setFooter(`Yoinkbot`, config.yoinkbotPFP)
             msg.channel.send(newembed)
         }
     }

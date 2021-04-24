@@ -1,8 +1,9 @@
 const commando = require('discord.js-commando');
-const fs = require('fs');
-const { DiscordAPIError } = require('discord.js');
+const path = require('path');
+const config = require(path.join(__dirname, '../../config', 'config.json'))
 const Discord = require('discord.js')
-const prefix  = '?'
+const prefix  = config.prefix
+
 module.exports = class ChooseCommand extends commando.Command {
     constructor(client) {
         super(client, {
@@ -34,7 +35,7 @@ module.exports = class ChooseCommand extends commando.Command {
       .setTitle(`${choice}`)
       .setFooter(`Random Choice Generator`, msg.author.displayAvatarURL())
       .setColor('#00CCFF')
-      .setAuthor(`Yoinkbot`,`https://cdn.discordapp.com/embed/avatars/1.png`)
+      .setAuthor(`Yoinkbot`,config.yoinkbotPFP)
 
       msg.channel.send(embed)
       choices= [];

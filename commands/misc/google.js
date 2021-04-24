@@ -1,6 +1,7 @@
 const commando = require('discord.js-commando');
-const prefix = '?'
-const path = require('path')
+const path = require('path');
+const config = require(path.join(__dirname, '../../config', 'config.json'))
+const prefix = config.prefix
 
 module.exports = class WeatherCommand extends commando.Command {
     constructor(client) {

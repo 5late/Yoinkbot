@@ -1,5 +1,7 @@
 const commando = require('discord.js-commando');
 const axios = require('axios')
+const config = require(path.join(__dirname, '../../config', 'config.json'))
+const prefix = config.prefix
 
 module.exports = class JokeCommand extends commando.Command {
     constructor(client) {

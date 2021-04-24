@@ -1,6 +1,8 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js')
-const prefix  = '?'
+const path = require('path');
+const config = require(path.join(__dirname, '../../config', 'config.json'))
+const prefix = config.prefix
 
 module.exports = class InsultCommand extends commando.Command {
     constructor(client) {
@@ -27,6 +29,7 @@ async run (msg, { text }) {
       const embed = new Discord.MessageEmbed()
       .setTitle('Insult machine.')
       .setDescription(text + insult)
+      .setFooter(`Yoinkbot`, config.yoinkbotPFP)
 
       msg.channel.send(embed)
     }

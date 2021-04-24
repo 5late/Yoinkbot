@@ -1,6 +1,7 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js')
-const prefix  = '?'
+const config = require(path.join(__dirname, '../../config', 'config.json'))
+const prefix = config.prefix
 
 module.exports = class KillCommand extends commando.Command {
     constructor(client) {
@@ -30,6 +31,7 @@ async run (msg) {
       const embed = new Discord.MessageEmbed()
       .setTitle('Kill machine.')
       .setDescription(msg.author.username+kill)
+      .setFooter(`Yoinkbot`, config.yoinkbotPFP)
 
       msg.channel.send(embed)
     }

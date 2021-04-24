@@ -1,8 +1,9 @@
 const commando = require('discord.js-commando');
-const fs = require('fs');
-const { DiscordAPIError } = require('discord.js');
 const Discord = require('discord.js')
-const prefix  = '?'
+const path = require('path');
+const config = require(path.join(__dirname, '../../config', 'config.json'))
+const prefix = config.prefix
+
 module.exports = class AskTrumpCommand extends commando.Command {
     constructor(client) {
         super(client, {
@@ -37,7 +38,7 @@ const image = trumpImage[Math.floor(Math.random() * trumpImage.length)];
 const responses = ['Drink Bleach!', 'Fake NEWS!', 'VOTE!!!!!', 'CHINA!', 'CORRUPT!!!!!', 'MAKE AMERICA GREAT AGAIN!!!', 'OBAMAGATE!!!!', 'You are the enemy of the people.', 'LAW AND ORDER!!!!', 'RIGGED ELECTION!!!', 'CROOKED HILLARY!!', 'SLEEPY JOE!!']
 const response = responses[Math.floor(Math.random()* responses.length)];
 const embed = new Discord.MessageEmbed()
-      .setAuthor(`Yoinkbot`, `https://cdn.discordapp.com/embed/avatars/1.png`)
+      .setAuthor(`Yoinkbot`, `${config.yoinkbotPFP}`)
       .setTitle(msg.author.username + ' asked Trump: ' + text)
       .setThumbnail(image)
       .setDescription('Trump answered with: ' + response)

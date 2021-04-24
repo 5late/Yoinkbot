@@ -1,6 +1,7 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js');
-const prefix = '?'
+const config = require(path.join(__dirname, '../../config', 'config.json'))
+const prefix = config.prefix
 
 module.exports = class LoveCalcCommand extends commando.Command {
     constructor(client) {
@@ -47,7 +48,7 @@ async run (msg, { text }) {
         .setColor(CalculateColor(lovecalc))
         .setTitle('Cupid')
         .addField("Result:", `${text}` + ' you are ' + lovecalc + '% in love!')
-        .setFooter("Yoinkbot")
+        .setFooter("Yoinkbot", config.yoinkbotPFP)
     msg.channel.send(newembed)
 }
 }

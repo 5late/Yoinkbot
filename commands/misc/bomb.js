@@ -1,8 +1,9 @@
 const commando = require('discord.js-commando');
-const fs = require('fs');
-const { DiscordAPIError } = require('discord.js');
 const Discord = require('discord.js')
+const path = require('path');
+const config = require(path.join(__dirname, '../../config', 'config.json'))
 const prefix  = '?'
+
 module.exports = class BombCommand extends commando.Command {
     constructor(client) {
         super(client, {
@@ -30,7 +31,7 @@ if(msg.member.hasPermission('ADMINISTRATOR')){
       .addField(`National Suicide Hotline`, `800-273-8255`)
       .addField(`Website`,`https://www.crisisservicescanada.ca/en/`)
       .addField(`List of resources`, `http://www.suicide.org/hotlines/international/canada-suicide-hotlines.html`)
-      .setFooter(`Yoinkbot, Xurxx#7879`)
+      .setFooter(`Yoinkbot`, config.yoinkbotPFP)
       msg.author.send(embed)
 }else{
     msg.channel.send('The power of the bomb is too strong.')
