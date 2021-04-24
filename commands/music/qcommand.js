@@ -18,7 +18,6 @@ const opts = {
     type: 'video'
 };
 const prefix = '?'
-const musicQueueAdd = require("./QueueCommand.js")
 //const PlayCommand = new PlayASongCommand;
 
 //var musicQueue = [];
