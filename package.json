@@ -1,6 +1,6 @@
 {
   "name": "yoinkbot",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Yoinkbot, the all around Discord bot by 5|ate.",
   "main": "index.js",
   "scripts": {
