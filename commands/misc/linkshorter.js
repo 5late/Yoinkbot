@@ -1,5 +1,6 @@
 const commando = require('discord.js-commando');
-const config = require(path.join(__dirname, '../../config', 'config.json'))
+const path = require('path');
+const config = require(path.join(__dirname, 'config', 'config.json'))
 const prefix = config.prefix
 const TinyURL = require('tinyurl');
 
