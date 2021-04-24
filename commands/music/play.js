@@ -1,12 +1,13 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js');
+const path = require('path');
+const config = require(path.join(__dirname, '../../config', 'config.json'))
 const ytdl = require('ytdl-core');
 const search = require('youtube-search')
 const client = commando.CommandoClient
 const Youtube = require('simple-youtube-api');
-const youtube = new Youtube("AIzaSyCfJycSirtEslaXzLCSrc_osNR65VwlMzw");
+const youtube = new Youtube(config.youtubeAPI);
 
-const yts = require('yt-search');
 const YouTube = require('youtube-node');
 const youTube = new YouTube();
 youTube.setKey()
@@ -34,17 +35,12 @@ module.exports = class QueueCommand extends commando.Command {
     const command = args.shift().toLowerCase();
     const query = args.join(' ');
     
-
-    //msg.channel.send('https://www.youtube.com/results?search_query=' + query)
- 
-    const choice = args[0];
-    console.log(choice)
    
     const voiceChannel = msg.member.voice.channel;
             let embed = new Discord.MessageEmbed();
-            /*if(musicQueue.some(url => url === youtubeUrl)) {
+            if(musicQueue.some(url => url === youtubeUrl)) {
                 embed.setDescription("Url is already in queue.");
-            }else if(ytdl.validateURL(youtubeUrl))*/ {
+            }else if(ytdl.validateURL(youtubeUrl)) {
             musicQueue.push(youtubeUrl);
             console.log(musicQueue); 
         
@@ -66,30 +62,6 @@ module.exports = class QueueCommand extends commando.Command {
             const dispatcher = connection.play(stream);
                 dispatcher.setVolume(0.40);
             dispatcher.on('end', () => voiceChannel.leave());
-        
-        
-    
-    //} else {
-      //  embed.setDescription("Invalid YouTube URL!");
-
-
-        switch (choice){
-            case 'pause':
-                    dispatcher.pause()
-                    break;
-            case 'unpause':
-                    dispatcher.unpause()
-                    break;
-            case 'skip':
-                    musicQueue.shift()
-                    break;
-            case 'stop': {
-                dispatcher.pause()
-                musicQueue = []
-                break;
-                
-            }    
-        }
     });
     }
 }
