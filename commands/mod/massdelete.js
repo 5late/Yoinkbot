@@ -5,7 +5,6 @@ const client = new commando.CommandoClient();
 //const args = message.content.split(' ').slice(1); 
 //const amount = args.join(' ');
 const fs = require('fs');
-const { info } = require('node-sass');
 var deletedMessages = [];
 var authored = [];
 
